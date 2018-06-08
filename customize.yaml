@@ -1,0 +1,102 @@
+sensor.steps:
+  friendly_name: J steg
+scene.aktivering_hemmalage_helg:
+  hidden: true
+scene.aktivering_hemmalage_vardag:
+  hidden: true
+scene.belysning_helg_av:
+  hidden: true
+scene.belysning_morgon_av:
+  hidden: true
+scene.belysning_morgon_pa:
+  hidden: true
+scene.christoffer_kvall_pa:
+  hidden: true
+scene.christoffer_morgon:
+  hidden: true
+climate.element_1_124:
+  hidden: true
+sensor.filament_luft_319:
+  hidden: true
+scene.fonsterytterbelysning_av:
+  hidden: true
+scene.fonsterytterbelysning_pa_morgon:
+  hidden: true
+scene.garderobstangd:
+  hidden: true
+scene.garderoboppen:
+  hidden: true
+cover.gardin_dorr_149:
+  hidden: true
+cover.gardin_fonster_143:
+  hidden: true
+cover.gardin_sovrum_225:
+  hidden: true
+scene.morgon_pa_malma:
+  hidden: true
+scene.nattbelysning:
+  hidden: true
+sensor.server_skap_202:
+  hidden: true
+scene.solnedgang:
+  hidden: true
+scene.soluppgang:
+  hidden: true
+sensor.tvbank_temp_303:
+  hidden: true
+scene.vaxtbelysning_av:
+  hidden: true
+scene.vaxtbelysning_pa:
+  hidden: true
+cover.window_covering_223:
+  hidden: true
+cover.window_covering_1_275:
+  hidden: true
+group.all_covers:
+  hidden: true
+sensor.elementet_2_332:
+  hidden: true
+sensor.filament_fukt_324:
+  hidden: true
+sensor.filament_temp_323:
+  hidden: true
+scene.sjuk_morgon:
+  hidden: true
+scene.wakeup:
+  hidden: true
+device_tracker.60019443336e:
+  hidden: true
+device_tracker.sonos_sovrum:
+  hidden: true
+device_tracker.sonos_badrum:
+  hidden: true
+device_tracker.sonos_christoffer:
+  hidden: true
+device_tracker.sonos_matrum:
+  hidden: true
+sensor.3_in_1_sensor_light_184:
+  hidden: true
+device_tracker.esp_5d41f9:
+  hidden: true
+device_tracker.esp_84b70d:
+  hidden: true
+device_tracker.elpartner:
+  hidden: true
+device_tracker.nya_ipaden:
+  hidden: true
+device_tracker.switch_tvbank:
+  hidden: true
+device_tracker.androidbf919a96b3bfe3e0:
+  hidden: true
+sensor.brand_hall_entre_humidity:
+  hidden: true
+sensor.brand_hall_entre_temperature:
+  hidden: true
+sensor.brand_v_rum_humidity:
+  hidden: true
+sensor.brand_v_rum_temperature:
+  hidden: true
+device_tracker.newdevice:
+  friendly_name: Esp-Odling
+device_tracker.sonoszp:
+  hidden: true
