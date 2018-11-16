@@ -24,25 +24,7 @@
   trigger:
   - at: '21:15'
     platform: time
-- action:
-  - data:
-      message: helena kommer hem
-    service: notify.telegram_jocke
-  - data:
-      master: media_player.Sovrum
-    entity_id:
-    - media_player.Badrum
-    - media_player.Matrum
-    service: media_player.sonos_join
-  - delay: '10'
-  - data:
-      message: Helena kommer hem!
-      sonos_entity: media_player.Sovrum
-      volume: '0.5'
-    service: script.sonos_say
-  alias: Helena Kommer hem
-  condition: []
-  id: '1527013839788'
+
   trigger:
   - entity_id: device_tracker.joakims_mobil
     from: not_home
