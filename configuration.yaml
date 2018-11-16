@@ -59,67 +59,6 @@ sun:
 
 # Weather prediction
 sensor: !include sensors.yaml
-#  - platform: mqtt
-#    state_topic: "homeassistant/temperatur/Humidity/#"
-#    name: "esp-Humidity"
-#    unit_of_measurement: '%'
-#    icon: mdi:water-percent
-#  - platform: mqtt
-#    state_topic: "homeassistant/temperatur/Temperature/#"
-#    name: "esp-Temperature"
-#    unit_of_measurement: '°C'
-
-#  - platform: mqtt
-#    state_topic: "homeassistant/#"
-#  - platform: yr
-#  - platform: fitbit
-#    clock_format: 24H
-#    monitored_resources:
-#      - "body/weight"
-#      - "activities/steps"
-#  - platform: template
-#    sensors:
-#      vatten_larm:
-#          unit_of_measurement: '%'
-#          value_template: >-
-#            {% if is_state("binary_sensor.water_sensor_2_3","off") %}
-#              100
-#            {% else %}
-#              0
-#            {% endif %}
-  #- platform: min_max
-  #  type: min
-  #  name: Lägsta_temp
-  #  entity_ids:
-  #    - sensor.utesovrum_346
-  #    - sensor.temp_altan_222
-#  - platform: mqtt
-#    name: Printer-progress
-#    state_topic: "octoprint/progress/#"
-#    unit_of_measurement: '%'
-#    value_template: "{{ value_json.progress }}"
-#
-#  - platform: mqtt
-#    name: Printer-Temperature
-#    icon: mdi:temperature-celsius
-#    state_topic: "octoprint/temperature/tool0"
-#    unit_of_measurement: 'C'
-#    value_template: "{{ value_json.actual }}"
-#  - platform: mqtt
-#    name: Printer-Object
-#    icon: mdi:temperature-celsius
-#    state_topic: "octoprint/progress/#"
-#    json_attributes:
-#      - "progress"
-#      - "_timestamp"
-#      - "location"
-#      - "path"
-#    monitored_resources:
-#      - "progress"
-#    unit_of_measurement: 'C'
-#    value_template: "{{ value_json.path }}"
-
-
 # Text to speech
 tts:
   - platform: google
@@ -154,10 +93,7 @@ panel_iframe:
     url: https://cdn.rawgit.com/james-fry/home-assistant-mdi/efd95d7a/home-assistant-mdi.html
 
 media_player:
-  - platform: sonos
-    hosts:
-      - 192.168.0.60
-  - platform: cast    
+  - platform: cast
 
 switch:
   - platform: mqtt
@@ -207,15 +143,15 @@ telegram_bot:
   - platform: polling
     api_key: 561936360:AAESnUiqFG-V7OvTO1uzG2GdeRaXeOsSIj4
     allowed_chat_ids:
-      - 567878632 #jocke
-      - 616013004 #helena
+      - !secret telegram_jocke #jocke
+      - !secret telegram_helena #helena
 notify:
   - name: Telegram_Jocke
     platform: telegram
-    chat_id: 567878632
+    chat_id: !secret telegram_jocke
   - name: Telegram_Helena
     platform: telegram
-    chat_id: 616013004
+    chat_id: !secret telegram_helena
 
 rest_command:
     vatten_larm_vera:

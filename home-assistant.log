@@ -1,207 +1,50 @@
-2018-11-16 19:05:30 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+2018-11-16 21:13:22 DEBUG (SyncWorker_1) [mysensors.persistence] Loading sensors from persistence file /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:13:22 ERROR (SyncWorker_2) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Invalid values: {16: '0'}: switch platform: node 2 child 3: S_DOOR requires value_type V_ARMED @ data[15]
+2018-11-16 21:13:22 INFO (MainThread) [homeassistant.components.mysensors] Adding new devices: [<Entity Water Sensor 2 3: off>]
+2018-11-16 21:13:22 INFO (MainThread) [homeassistant.components.mysensors] Adding new devices: [<Entity guesthouse-climate 9 0: None>, <Entity guesthouse-climate 9 1: None>]
+2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.device] Entity update: Water Sensor 2 3: value_type 16, value = 0
+2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.device] Entity update: guesthouse-climate 9 1: value_type 0, value = 24.5
+2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.device] Entity update: guesthouse-climate 9 0: value_type 1, value = 36.7
+2018-11-16 21:13:22 INFO (MainThread) [mysensors.gateway_tcp] Trying to connect to ('192.168.0.177', 5003)
+2018-11-16 21:13:22 INFO (MainThread) [mysensors] Connected to <_SelectorSocketTransport fd=15 read=idle write=<idle, bufsize=0>>
+2018-11-16 21:13:22 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;14;Gateway startup complete.
+2018-11-16 21:13:22 INFO (MainThread) [mysensors.handler] n:0 c:255 t:3 s:14 p:Gateway startup complete.
+2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Node update: node 0 child 255
+2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Not a child update for node 0
+2018-11-16 21:13:22 DEBUG (MainThread) [mysensors] Receiving 0;255;0;0;18;2.2.0
+2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Node update: node 0 child 255
+2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Not a child update for node 0
+2018-11-16 21:13:26 ERROR (SyncWorker_3) [homeassistant.util.json] Saving JSON file failed: /home/homeassistant/.homeassistant/.storage/core.config_entries
 Traceback (most recent call last):
-  File "/usr/lib/python3.6/asyncio/tasks.py", line 180, in _step
-    result = coro.send(None)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 355, in finalize_panel
-    yield from panel.async_finalize(hass, repo_path)
-  File "/usr/lib/python3.6/asyncio/coroutines.py", line 210, in coro
-    res = func(*args, **kw)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 187, in async_finalize
-    hass_frontend.FINGERPRINTS[self.component_name])
-AttributeError: module 'hass_frontend' has no attribute 'FINGERPRINTS'
-2018-11-16 19:05:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 55, in save_json
+    dir=tmp_path, delete=False) as fdesc:
+  File "/usr/lib/python3.6/tempfile.py", line 688, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags, output_type)
+  File "/usr/lib/python3.6/tempfile.py", line 399, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+PermissionError: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmp_u07kz9z'
+2018-11-16 21:13:26 ERROR (MainThread) [homeassistant.helpers.storage] Error writing config for core.config_entries: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmp_u07kz9z'
+2018-11-16 21:13:32 ERROR (SyncWorker_2) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:13:32 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:13:33 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:13:34 ERROR (SyncWorker_7) [homeassistant.util.json] Saving JSON file failed: /home/homeassistant/.homeassistant/.storage/core.entity_registry
 Traceback (most recent call last):
-  File "/usr/lib/python3.6/asyncio/tasks.py", line 180, in _step
-    result = coro.send(None)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 355, in finalize_panel
-    yield from panel.async_finalize(hass, repo_path)
-  File "/usr/lib/python3.6/asyncio/coroutines.py", line 210, in coro
-    res = func(*args, **kw)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 187, in async_finalize
-    hass_frontend.FINGERPRINTS[self.component_name])
-AttributeError: module 'hass_frontend' has no attribute 'FINGERPRINTS'
-2018-11-16 19:05:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 55, in save_json
+    dir=tmp_path, delete=False) as fdesc:
+  File "/usr/lib/python3.6/tempfile.py", line 688, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags, output_type)
+  File "/usr/lib/python3.6/tempfile.py", line 399, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+PermissionError: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmp4_hj7u0m'
+2018-11-16 21:13:34 ERROR (MainThread) [homeassistant.helpers.storage] Error writing config for core.entity_registry: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmp4_hj7u0m'
+2018-11-16 21:13:42 ERROR (SyncWorker_8) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:13:42 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:13:43 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:13:43 ERROR (SyncWorker_9) [homeassistant.util.json] Could not parse JSON content: /home/homeassistant/.homeassistant/plex.conf
 Traceback (most recent call last):
-  File "/usr/lib/python3.6/asyncio/tasks.py", line 180, in _step
-    result = coro.send(None)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 355, in finalize_panel
-    yield from panel.async_finalize(hass, repo_path)
-  File "/usr/lib/python3.6/asyncio/coroutines.py", line 210, in coro
-    res = func(*args, **kw)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 187, in async_finalize
-    hass_frontend.FINGERPRINTS[self.component_name])
-AttributeError: module 'hass_frontend' has no attribute 'FINGERPRINTS'
-2018-11-16 19:05:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/asyncio/tasks.py", line 180, in _step
-    result = coro.send(None)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 355, in finalize_panel
-    yield from panel.async_finalize(hass, repo_path)
-  File "/usr/lib/python3.6/asyncio/coroutines.py", line 210, in coro
-    res = func(*args, **kw)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 187, in async_finalize
-    hass_frontend.FINGERPRINTS[self.component_name])
-AttributeError: module 'hass_frontend' has no attribute 'FINGERPRINTS'
-2018-11-16 19:05:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/asyncio/tasks.py", line 180, in _step
-    result = coro.send(None)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 355, in finalize_panel
-    yield from panel.async_finalize(hass, repo_path)
-  File "/usr/lib/python3.6/asyncio/coroutines.py", line 210, in coro
-    res = func(*args, **kw)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 187, in async_finalize
-    hass_frontend.FINGERPRINTS[self.component_name])
-AttributeError: module 'hass_frontend' has no attribute 'FINGERPRINTS'
-2018-11-16 19:05:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/asyncio/tasks.py", line 180, in _step
-    result = coro.send(None)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 355, in finalize_panel
-    yield from panel.async_finalize(hass, repo_path)
-  File "/usr/lib/python3.6/asyncio/coroutines.py", line 210, in coro
-    res = func(*args, **kw)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 187, in async_finalize
-    hass_frontend.FINGERPRINTS[self.component_name])
-AttributeError: module 'hass_frontend' has no attribute 'FINGERPRINTS'
-2018-11-16 19:05:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/asyncio/tasks.py", line 180, in _step
-    result = coro.send(None)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 355, in finalize_panel
-    yield from panel.async_finalize(hass, repo_path)
-  File "/usr/lib/python3.6/asyncio/coroutines.py", line 210, in coro
-    res = func(*args, **kw)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 187, in async_finalize
-    hass_frontend.FINGERPRINTS[self.component_name])
-AttributeError: module 'hass_frontend' has no attribute 'FINGERPRINTS'
-2018-11-16 19:05:31 ERROR (MainThread) [homeassistant.setup] Error during setup of component history
-Traceback (most recent call last):
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/setup.py", line 142, in _async_setup_component
-    result = await component.async_setup(hass, processed_config)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/history.py", line 254, in async_setup
-    'history', 'history', 'mdi:poll-box')
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 251, in async_register_built_in_panel
-    yield from panel.async_register(hass)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 132, in async_register
-    yield from hass.data[DATA_FINALIZE_PANEL](self)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 355, in finalize_panel
-    yield from panel.async_finalize(hass, repo_path)
-  File "/usr/lib/python3.6/asyncio/coroutines.py", line 210, in coro
-    res = func(*args, **kw)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 187, in async_finalize
-    hass_frontend.FINGERPRINTS[self.component_name])
-AttributeError: module 'hass_frontend' has no attribute 'FINGERPRINTS'
-2018-11-16 19:05:31 ERROR (MainThread) [homeassistant.setup] Error during setup of component map
-Traceback (most recent call last):
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/setup.py", line 142, in _async_setup_component
-    result = await component.async_setup(hass, processed_config)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/map.py", line 16, in async_setup
-    'map', 'map', 'mdi:account-location')
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 251, in async_register_built_in_panel
-    yield from panel.async_register(hass)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 132, in async_register
-    yield from hass.data[DATA_FINALIZE_PANEL](self)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 355, in finalize_panel
-    yield from panel.async_finalize(hass, repo_path)
-  File "/usr/lib/python3.6/asyncio/coroutines.py", line 210, in coro
-    res = func(*args, **kw)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 187, in async_finalize
-    hass_frontend.FINGERPRINTS[self.component_name])
-AttributeError: module 'hass_frontend' has no attribute 'FINGERPRINTS'
-2018-11-16 19:05:31 ERROR (MainThread) [homeassistant.setup] Error during setup of component config
-Traceback (most recent call last):
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/setup.py", line 142, in _async_setup_component
-    result = await component.async_setup(hass, processed_config)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/config/__init__.py", line 28, in async_setup
-    'config', 'config', 'mdi:settings')
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 251, in async_register_built_in_panel
-    yield from panel.async_register(hass)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 132, in async_register
-    yield from hass.data[DATA_FINALIZE_PANEL](self)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 355, in finalize_panel
-    yield from panel.async_finalize(hass, repo_path)
-  File "/usr/lib/python3.6/asyncio/coroutines.py", line 210, in coro
-    res = func(*args, **kw)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 187, in async_finalize
-    hass_frontend.FINGERPRINTS[self.component_name])
-AttributeError: module 'hass_frontend' has no attribute 'FINGERPRINTS'
-2018-11-16 19:05:31 ERROR (MainThread) [homeassistant.setup] Error during setup of component logbook
-Traceback (most recent call last):
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/setup.py", line 145, in _async_setup_component
-    component.setup, hass, processed_config)
-  File "/usr/lib/python3.6/asyncio/futures.py", line 332, in __iter__
-    yield self  # This tells Task to wait for completion.
-  File "/usr/lib/python3.6/asyncio/tasks.py", line 250, in _wakeup
-    future.result()
-  File "/usr/lib/python3.6/asyncio/futures.py", line 245, in result
-    raise self._exception
-  File "/usr/lib/python3.6/asyncio/tasks.py", line 180, in _step
-    result = coro.send(None)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/logbook.py", line 109, in setup
-    'logbook', 'logbook', 'mdi:format-list-bulleted-type')
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 251, in async_register_built_in_panel
-    yield from panel.async_register(hass)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 132, in async_register
-    yield from hass.data[DATA_FINALIZE_PANEL](self)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 355, in finalize_panel
-    yield from panel.async_finalize(hass, repo_path)
-  File "/usr/lib/python3.6/asyncio/coroutines.py", line 210, in coro
-    res = func(*args, **kw)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 187, in async_finalize
-    hass_frontend.FINGERPRINTS[self.component_name])
-AttributeError: module 'hass_frontend' has no attribute 'FINGERPRINTS'
-2018-11-16 19:05:31 ERROR (MainThread) [homeassistant.setup] Error during setup of component panel_iframe
-Traceback (most recent call last):
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/setup.py", line 145, in _async_setup_component
-    component.setup, hass, processed_config)
-  File "/usr/lib/python3.6/asyncio/futures.py", line 332, in __iter__
-    yield self  # This tells Task to wait for completion.
-  File "/usr/lib/python3.6/asyncio/tasks.py", line 250, in _wakeup
-    future.result()
-  File "/usr/lib/python3.6/asyncio/futures.py", line 245, in result
-    raise self._exception
-  File "/usr/lib/python3.6/asyncio/tasks.py", line 180, in _step
-    result = coro.send(None)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/panel_iframe.py", line 43, in setup
-    url_path, {'url': info[CONF_URL]})
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 251, in async_register_built_in_panel
-    yield from panel.async_register(hass)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 132, in async_register
-    yield from hass.data[DATA_FINALIZE_PANEL](self)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 355, in finalize_panel
-    yield from panel.async_finalize(hass, repo_path)
-  File "/usr/lib/python3.6/asyncio/coroutines.py", line 210, in coro
-    res = func(*args, **kw)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/frontend/__init__.py", line 187, in async_finalize
-    hass_frontend.FINGERPRINTS[self.component_name])
-AttributeError: module 'hass_frontend' has no attribute 'FINGERPRINTS'
-2018-11-16 19:05:34 INFO (Thread-8) [mysensors.gateway_tcp] Trying to connect to ('192.168.0.177', 5003)
-2018-11-16 19:05:34 INFO (Thread-9) [mysensors] Connected to <socket.socket fd=14, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('192.168.0.160', 49196), raddr=('192.168.0.177', 5003)>
-2018-11-16 19:05:34 ERROR (MainThread) [homeassistant.components.http] Failed to create HTTP server at port 8123: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8123): address already in use
-2018-11-16 19:05:34 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;14;Gateway startup complete.
-2018-11-16 19:05:34 DEBUG (Thread-9) [mysensors] Receiving 0;255;0;0;18;2.2.0
-2018-11-16 19:05:34 INFO (Thread-10) [mysensors.handler] n:0 c:255 t:3 s:14 p:Gateway startup complete.
-2018-11-16 19:05:34 DEBUG (Thread-10) [homeassistant.components.mysensors] Node update: node 0 child 255
-2018-11-16 19:05:34 ERROR (Thread-10) [mysensors] 0
-Traceback (most recent call last):
-  File "/home/homeassistant/.homeassistant/deps/lib/python3.6/site-packages/mysensors/__init__.py", line 87, in alert
-    self.event_callback(msg)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/mysensors.py", line 469, in mysensors_callback
-    child = msg.gateway.sensors[msg.node_id].children.get(msg.child_id)
-KeyError: 0
-2018-11-16 19:05:34 DEBUG (Thread-10) [mysensors] Handle queue with call <bound method Gateway.logic of <TCPGateway>>(('0;255;3;0;14;Gateway startup complete.',)) took 0.103 seconds
-2018-11-16 19:05:34 DEBUG (Thread-10) [homeassistant.components.mysensors] Node update: node 0 child 255
-2018-11-16 19:05:34 DEBUG (Thread-10) [homeassistant.components.mysensors] Not a child update for node 0
-2018-11-16 19:05:35 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:05:44 DEBUG (Thread-10) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:05:44 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:05:44 ERROR (MainThread) [homeassistant.components.telegram_bot.polling] wrong status 409
-2018-11-16 19:05:45 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:05:48 ERROR (SyncWorker_1) [homeassistant.util.json] Could not parse JSON content: /home/homeassistant/.homeassistant/plex.conf
-Traceback (most recent call last):
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 22, in load_json
-    return json.loads(fdesc.read())
+  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 30, in load_json
+    return json.loads(fdesc.read())  # type: ignore
   File "/usr/lib/python3.6/json/__init__.py", line 354, in loads
     return _default_decoder.decode(s)
   File "/usr/lib/python3.6/json/decoder.py", line 339, in decode
@@ -209,10 +52,10 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/json/decoder.py", line 357, in raw_decode
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-2018-11-16 19:05:48 ERROR (MainThread) [homeassistant.components.media_player] Error while setting up platform plex
+2018-11-16 21:13:43 ERROR (MainThread) [homeassistant.components.media_player] Error while setting up platform plex
 Traceback (most recent call last):
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 22, in load_json
-    return json.loads(fdesc.read())
+  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 30, in load_json
+    return json.loads(fdesc.read())  # type: ignore
   File "/usr/lib/python3.6/json/__init__.py", line 354, in loads
     return _default_decoder.decode(s)
   File "/usr/lib/python3.6/json/decoder.py", line 339, in decode
@@ -224,269 +67,51 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 82, in async_setup
+  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 128, in _async_setup_platform
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
   File "/usr/lib/python3.6/asyncio/tasks.py", line 358, in wait_for
     return fut.result()
-  File "/usr/lib/python3.6/asyncio/futures.py", line 245, in result
-    raise self._exception
   File "/usr/lib/python3.6/concurrent/futures/thread.py", line 56, in run
     result = self.fn(*self.args, **self.kwargs)
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/media_player/plex.py", line 60, in setup_platform
+  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/media_player/plex.py", line 61, in setup_platform
     file_config = load_json(hass.config.path(PLEX_CONFIG_FILE))
-  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 28, in load_json
+  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 36, in load_json
     raise HomeAssistantError(error)
 homeassistant.exceptions.HomeAssistantError: Expecting value: line 1 column 1 (char 0)
-2018-11-16 19:05:54 DEBUG (Thread-10) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:05:54 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:05:54 ERROR (MainThread) [homeassistant.components.telegram_bot.polling] wrong status 409
-2018-11-16 19:05:55 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:04 DEBUG (Thread-10) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:06:04 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:04 ERROR (MainThread) [homeassistant.components.telegram_bot.polling] wrong status 409
-2018-11-16 19:06:05 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:14 DEBUG (Thread-10) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:06:14 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:15 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:16 DEBUG (Thread-9) [mysensors] Receiving 2;255;3;0;21;0
-2018-11-16 19:06:16 WARNING (Thread-10) [mysensors] Not a valid message: Not valid message sub-type: 21 for dictionary value @ data['sub_type']
-2018-11-16 19:06:24 DEBUG (Thread-10) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:06:24 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:25 ERROR (MainThread) [homeassistant.components.telegram_bot.polling] wrong status 409
-2018-11-16 19:06:25 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:34 DEBUG (Thread-10) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:06:34 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:35 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:36 ERROR (MainThread) [homeassistant.components.telegram_bot.polling] wrong status 409
-2018-11-16 19:06:44 DEBUG (Thread-10) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:06:44 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:45 DEBUG (Thread-9) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:51 INFO (SyncWorker_9) [mysensors.gateway_tcp] Stopping gateway
-2018-11-16 19:06:51 INFO (SyncWorker_9) [mysensors] Disconnecting from gateway
-2018-11-16 19:06:51 DEBUG (Thread-9) [mysensors] Connection lost with <socket.socket fd=14, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('192.168.0.160', 49196), raddr=('192.168.0.177', 5003)>
-2018-11-16 19:06:51 ERROR (SyncWorker_9) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       2018-11-16 19:05:34 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;14;Gateway startup complete.
-2018-11-16 19:05:34 DEBUG (Thread-12) [mysensors] Receiving 0;255;0;0;18;2.2.0
-2018-11-16 19:05:34 INFO (Thread-13) [mysensors.handler] n:0 c:255 t:3 s:14 p:Gateway startup complete.
-2018-11-16 19:05:34 DEBUG (Thread-13) [homeassistant.components.mysensors] Node update: node 0 child 255
-2018-11-16 19:05:34 DEBUG (Thread-13) [homeassistant.components.mysensors] Not a child update for node 0
-2018-11-16 19:05:34 DEBUG (Thread-13) [homeassistant.components.mysensors] Node update: node 0 child 255
-2018-11-16 19:05:34 DEBUG (Thread-13) [homeassistant.components.mysensors] Not a child update for node 0
-2018-11-16 19:05:34 ERROR (MainThread) [homeassistant.components.telegram_bot.polling] wrong status 409
-2018-11-16 19:05:35 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:05:35 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:05:44 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:05:45 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:05:45 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:05:54 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:05:55 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:05:55 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:04 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:05 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:06:05 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:14 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:14 ERROR (MainThread) [homeassistant.components.telegram_bot.polling] wrong status 409
-2018-11-16 19:06:15 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:06:15 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:16 DEBUG (Thread-12) [mysensors] Receiving 2;255;3;0;21;0
-2018-11-16 19:06:16 WARNING (Thread-13) [mysensors] Not a valid message: Not valid message sub-type: 21 for dictionary value @ data['sub_type']
-2018-11-16 19:06:24 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:25 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:06:25 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:34 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:35 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:06:35 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:44 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:45 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:06:45 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:06:46 ERROR (MainThread) [homeassistant.components.telegram_bot.polling] wrong status 409
-2018-11-16 19:06:55 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:06:55 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:07:05 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:07:05 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:07:15 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:07:15 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:07:25 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:07:25 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:07:35 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:07:35 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:07:45 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:07:45 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:07:55 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:07:55 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:08:05 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:08:05 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:08:15 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:08:15 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:08:25 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:08:25 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:08:35 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:08:35 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:08:45 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:08:45 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:08:55 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:08:55 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:09:05 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:09:05 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:09:15 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:09:15 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:09:25 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:09:25 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:09:35 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:09:35 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:09:45 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:09:45 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:09:55 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:09:56 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:10:05 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:10:05 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:10:15 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:10:15 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:10:25 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:10:26 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:10:35 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:10:36 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:10:45 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:10:46 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:10:55 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:10:55 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:11:05 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:11:06 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:11:15 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:11:16 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:11:25 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:11:26 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:11:35 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:11:36 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:11:45 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:11:46 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:11:55 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:11:56 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:12:06 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:12:06 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:12:16 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:12:16 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:12:26 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:12:26 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:12:36 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:12:36 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:12:46 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:12:46 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:12:56 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:12:56 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:13:06 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:13:06 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:13:16 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:13:16 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:13:26 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:13:26 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:13:36 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:13:36 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:13:46 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:13:46 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:13:56 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:13:56 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:14:06 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:14:06 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:14:16 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:14:16 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:14:26 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:14:26 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:14:36 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:14:36 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:14:46 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:14:46 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:14:56 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:14:56 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:15:06 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:15:06 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:15:16 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:15:16 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:15:26 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:15:26 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:15:36 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:15:36 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:15:46 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:15:46 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:15:56 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:15:56 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:16:06 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:16:06 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:16:16 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:16:16 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:16:26 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:16:26 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:16:36 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:16:36 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:16:46 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:16:46 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:16:56 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:16:56 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:17:06 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:17:06 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:17:16 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:17:16 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:17:26 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:17:26 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:17:36 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:17:36 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:17:46 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:17:46 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:17:56 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:17:56 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:18:06 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:18:06 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:18:16 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:18:16 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:18:26 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:18:26 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:18:36 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:18:36 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:18:46 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:18:46 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:18:56 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:18:56 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:19:06 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:19:06 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:19:16 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:19:16 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:19:26 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:19:26 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:19:36 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:19:36 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:19:46 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:19:46 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:19:56 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:19:56 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:20:06 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:20:06 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:20:16 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:20:16 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:20:26 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:20:26 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:20:36 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:20:36 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:20:46 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:20:46 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:20:56 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:20:56 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:21:06 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:21:06 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:21:16 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:21:16 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:21:26 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:21:26 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:21:36 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:21:36 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:21:46 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:21:46 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:21:56 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:21:56 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:22:06 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:22:06 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:22:16 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:22:16 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:22:26 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:22:26 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 19:22:36 DEBUG (Thread-13) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 19:22:36 DEBUG (Thread-12) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:13:52 ERROR (SyncWorker_0) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:13:53 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:13:53 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:13:54 ERROR (SyncWorker_7) [homeassistant.util.json] Saving JSON file failed: /home/homeassistant/.homeassistant/.storage/core.entity_registry
+Traceback (most recent call last):
+  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 55, in save_json
+    dir=tmp_path, delete=False) as fdesc:
+  File "/usr/lib/python3.6/tempfile.py", line 688, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags, output_type)
+  File "/usr/lib/python3.6/tempfile.py", line 399, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+PermissionError: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmpr6o34bs2'
+2018-11-16 21:13:54 ERROR (MainThread) [homeassistant.helpers.storage] Error writing config for core.entity_registry: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmpr6o34bs2'
+2018-11-16 21:14:02 ERROR (SyncWorker_6) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:14:03 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:14:03 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:14:12 ERROR (SyncWorker_8) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:14:13 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:14:13 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:14:22 ERROR (SyncWorker_7) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:14:23 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:14:23 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:14:32 ERROR (SyncWorker_1) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:14:33 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:14:33 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:14:42 ERROR (SyncWorker_9) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:14:43 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:14:43 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:14:52 ERROR (SyncWorker_2) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:14:53 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:14:53 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:15:02 ERROR (SyncWorker_4) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:15:03 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:15:03 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:15:12 ERROR (SyncWorker_7) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:15:13 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:15:13 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
