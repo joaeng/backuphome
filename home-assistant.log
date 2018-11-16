@@ -1,21 +1,21 @@
-2018-11-16 21:13:22 DEBUG (SyncWorker_1) [mysensors.persistence] Loading sensors from persistence file /home/homeassistant/.homeassistant/mysensors1.json
-2018-11-16 21:13:22 ERROR (SyncWorker_2) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
-2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Invalid values: {16: '0'}: switch platform: node 2 child 3: S_DOOR requires value_type V_ARMED @ data[15]
-2018-11-16 21:13:22 INFO (MainThread) [homeassistant.components.mysensors] Adding new devices: [<Entity Water Sensor 2 3: off>]
-2018-11-16 21:13:22 INFO (MainThread) [homeassistant.components.mysensors] Adding new devices: [<Entity guesthouse-climate 9 0: None>, <Entity guesthouse-climate 9 1: None>]
-2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.device] Entity update: Water Sensor 2 3: value_type 16, value = 0
-2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.device] Entity update: guesthouse-climate 9 1: value_type 0, value = 24.5
-2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.device] Entity update: guesthouse-climate 9 0: value_type 1, value = 36.7
-2018-11-16 21:13:22 INFO (MainThread) [mysensors.gateway_tcp] Trying to connect to ('192.168.0.177', 5003)
-2018-11-16 21:13:22 INFO (MainThread) [mysensors] Connected to <_SelectorSocketTransport fd=15 read=idle write=<idle, bufsize=0>>
-2018-11-16 21:13:22 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;14;Gateway startup complete.
-2018-11-16 21:13:22 INFO (MainThread) [mysensors.handler] n:0 c:255 t:3 s:14 p:Gateway startup complete.
-2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Node update: node 0 child 255
-2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Not a child update for node 0
-2018-11-16 21:13:22 DEBUG (MainThread) [mysensors] Receiving 0;255;0;0;18;2.2.0
-2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Node update: node 0 child 255
-2018-11-16 21:13:22 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Not a child update for node 0
-2018-11-16 21:13:26 ERROR (SyncWorker_3) [homeassistant.util.json] Saving JSON file failed: /home/homeassistant/.homeassistant/.storage/core.config_entries
+2018-11-16 21:17:41 DEBUG (SyncWorker_5) [mysensors.persistence] Loading sensors from persistence file /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:17:41 ERROR (SyncWorker_2) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:17:41 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Invalid values: {16: '0'}: switch platform: node 2 child 3: S_DOOR requires value_type V_ARMED @ data[15]
+2018-11-16 21:17:41 INFO (MainThread) [homeassistant.components.mysensors] Adding new devices: [<Entity Water Sensor 2 3: off>]
+2018-11-16 21:17:41 INFO (MainThread) [homeassistant.components.mysensors] Adding new devices: [<Entity guesthouse-climate 9 0: None>, <Entity guesthouse-climate 9 1: None>]
+2018-11-16 21:17:41 DEBUG (MainThread) [homeassistant.components.mysensors.device] Entity update: Water Sensor 2 3: value_type 16, value = 0
+2018-11-16 21:17:41 DEBUG (MainThread) [homeassistant.components.mysensors.device] Entity update: guesthouse-climate 9 1: value_type 0, value = 24.5
+2018-11-16 21:17:41 DEBUG (MainThread) [homeassistant.components.mysensors.device] Entity update: guesthouse-climate 9 0: value_type 1, value = 36.7
+2018-11-16 21:17:41 INFO (MainThread) [mysensors.gateway_tcp] Trying to connect to ('192.168.0.177', 5003)
+2018-11-16 21:17:41 INFO (MainThread) [mysensors] Connected to <_SelectorSocketTransport fd=15 read=idle write=<idle, bufsize=0>>
+2018-11-16 21:17:42 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;14;Gateway startup complete.
+2018-11-16 21:17:42 INFO (MainThread) [mysensors.handler] n:0 c:255 t:3 s:14 p:Gateway startup complete.
+2018-11-16 21:17:42 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Node update: node 0 child 255
+2018-11-16 21:17:42 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Not a child update for node 0
+2018-11-16 21:17:42 DEBUG (MainThread) [mysensors] Receiving 0;255;0;0;18;2.2.0
+2018-11-16 21:17:42 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Node update: node 0 child 255
+2018-11-16 21:17:42 DEBUG (MainThread) [homeassistant.components.mysensors.gateway] Not a child update for node 0
+2018-11-16 21:17:45 ERROR (SyncWorker_5) [homeassistant.util.json] Saving JSON file failed: /home/homeassistant/.homeassistant/.storage/core.config_entries
 Traceback (most recent call last):
   File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 55, in save_json
     dir=tmp_path, delete=False) as fdesc:
@@ -23,12 +23,12 @@ Traceback (most recent call last):
     (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags, output_type)
   File "/usr/lib/python3.6/tempfile.py", line 399, in _mkstemp_inner
     fd = _os.open(file, flags, 0o600)
-PermissionError: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmp_u07kz9z'
-2018-11-16 21:13:26 ERROR (MainThread) [homeassistant.helpers.storage] Error writing config for core.config_entries: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmp_u07kz9z'
-2018-11-16 21:13:32 ERROR (SyncWorker_2) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
-2018-11-16 21:13:32 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 21:13:33 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 21:13:34 ERROR (SyncWorker_7) [homeassistant.util.json] Saving JSON file failed: /home/homeassistant/.homeassistant/.storage/core.entity_registry
+PermissionError: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmpjwvi2z80'
+2018-11-16 21:17:45 ERROR (MainThread) [homeassistant.helpers.storage] Error writing config for core.config_entries: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmpjwvi2z80'
+2018-11-16 21:17:51 ERROR (SyncWorker_6) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:17:52 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:17:52 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:17:53 ERROR (SyncWorker_8) [homeassistant.util.json] Saving JSON file failed: /home/homeassistant/.homeassistant/.storage/core.entity_registry
 Traceback (most recent call last):
   File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 55, in save_json
     dir=tmp_path, delete=False) as fdesc:
@@ -36,12 +36,12 @@ Traceback (most recent call last):
     (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags, output_type)
   File "/usr/lib/python3.6/tempfile.py", line 399, in _mkstemp_inner
     fd = _os.open(file, flags, 0o600)
-PermissionError: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmp4_hj7u0m'
-2018-11-16 21:13:34 ERROR (MainThread) [homeassistant.helpers.storage] Error writing config for core.entity_registry: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmp4_hj7u0m'
-2018-11-16 21:13:42 ERROR (SyncWorker_8) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
-2018-11-16 21:13:42 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 21:13:43 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 21:13:43 ERROR (SyncWorker_9) [homeassistant.util.json] Could not parse JSON content: /home/homeassistant/.homeassistant/plex.conf
+PermissionError: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmpa_0_jakx'
+2018-11-16 21:17:53 ERROR (MainThread) [homeassistant.helpers.storage] Error writing config for core.entity_registry: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmpa_0_jakx'
+2018-11-16 21:18:01 ERROR (SyncWorker_9) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:18:02 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:18:02 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:18:02 ERROR (SyncWorker_8) [homeassistant.util.json] Could not parse JSON content: /home/homeassistant/.homeassistant/plex.conf
 Traceback (most recent call last):
   File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 30, in load_json
     return json.loads(fdesc.read())  # type: ignore
@@ -52,7 +52,16 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/json/decoder.py", line 357, in raw_decode
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-2018-11-16 21:13:43 ERROR (MainThread) [homeassistant.components.media_player] Error while setting up platform plex
+2018-11-16 21:18:02 ERROR (MainThread) [homeassistant.setup] Error during setup of component octoprint
+Traceback (most recent call last):
+  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/setup.py", line 148, in _async_setup_component
+    component.setup, hass, processed_config)  # type: ignore
+  File "/usr/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/components/octoprint.py", line 95, in setup
+    for printer in config[DOMAIN]:
+KeyError: 'octoprint'
+2018-11-16 21:18:02 ERROR (MainThread) [homeassistant.components.media_player] Error while setting up platform plex
 Traceback (most recent call last):
   File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 30, in load_json
     return json.loads(fdesc.read())  # type: ignore
@@ -78,10 +87,10 @@ Traceback (most recent call last):
   File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 36, in load_json
     raise HomeAssistantError(error)
 homeassistant.exceptions.HomeAssistantError: Expecting value: line 1 column 1 (char 0)
-2018-11-16 21:13:52 ERROR (SyncWorker_0) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
-2018-11-16 21:13:53 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 21:13:53 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 21:13:54 ERROR (SyncWorker_7) [homeassistant.util.json] Saving JSON file failed: /home/homeassistant/.homeassistant/.storage/core.entity_registry
+2018-11-16 21:18:11 ERROR (SyncWorker_8) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:18:12 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:18:12 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:18:13 ERROR (SyncWorker_4) [homeassistant.util.json] Saving JSON file failed: /home/homeassistant/.homeassistant/.storage/core.entity_registry
 Traceback (most recent call last):
   File "/srv/homeassistant/lib/python3.6/site-packages/homeassistant/util/json.py", line 55, in save_json
     dir=tmp_path, delete=False) as fdesc:
@@ -89,29 +98,121 @@ Traceback (most recent call last):
     (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags, output_type)
   File "/usr/lib/python3.6/tempfile.py", line 399, in _mkstemp_inner
     fd = _os.open(file, flags, 0o600)
-PermissionError: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmpr6o34bs2'
-2018-11-16 21:13:54 ERROR (MainThread) [homeassistant.helpers.storage] Error writing config for core.entity_registry: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmpr6o34bs2'
-2018-11-16 21:14:02 ERROR (SyncWorker_6) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
-2018-11-16 21:14:03 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 21:14:03 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 21:14:12 ERROR (SyncWorker_8) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
-2018-11-16 21:14:13 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 21:14:13 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 21:14:22 ERROR (SyncWorker_7) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
-2018-11-16 21:14:23 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 21:14:23 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 21:14:32 ERROR (SyncWorker_1) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
-2018-11-16 21:14:33 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 21:14:33 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 21:14:42 ERROR (SyncWorker_9) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
-2018-11-16 21:14:43 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 21:14:43 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 21:14:52 ERROR (SyncWorker_2) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
-2018-11-16 21:14:53 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 21:14:53 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 21:15:02 ERROR (SyncWorker_4) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
-2018-11-16 21:15:03 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 21:15:03 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
-2018-11-16 21:15:12 ERROR (SyncWorker_7) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
-2018-11-16 21:15:13 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
-2018-11-16 21:15:13 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+PermissionError: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmpzy6zdw1c'
+2018-11-16 21:18:13 ERROR (MainThread) [homeassistant.helpers.storage] Error writing config for core.entity_registry: [Errno 13] Permission denied: '/home/homeassistant/.homeassistant/.storage/tmpzy6zdw1c'
+2018-11-16 21:18:21 ERROR (SyncWorker_9) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:18:22 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:18:22 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:18:31 ERROR (SyncWorker_6) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:18:32 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:18:32 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:18:41 ERROR (SyncWorker_6) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:18:42 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:18:42 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:18:51 ERROR (SyncWorker_0) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:18:52 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:18:52 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:19:01 ERROR (SyncWorker_0) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:19:02 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:19:02 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:19:11 ERROR (SyncWorker_9) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:19:12 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:19:12 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:19:21 ERROR (SyncWorker_9) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:19:23 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:19:23 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:19:31 ERROR (SyncWorker_8) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:19:33 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:19:33 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:19:41 ERROR (SyncWorker_6) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:19:43 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:19:43 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:19:51 ERROR (SyncWorker_6) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:19:53 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:19:53 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:20:01 ERROR (SyncWorker_8) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:20:03 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:20:03 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:20:11 ERROR (SyncWorker_9) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:20:13 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:20:13 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:20:21 ERROR (SyncWorker_4) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:20:23 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:20:23 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:20:31 ERROR (SyncWorker_7) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:20:33 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:20:33 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:20:41 ERROR (SyncWorker_3) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:20:43 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:20:43 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:20:51 ERROR (SyncWorker_2) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:20:53 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:20:53 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:21:01 ERROR (SyncWorker_5) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:21:04 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:21:04 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:21:11 ERROR (SyncWorker_9) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:21:14 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:21:14 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:21:21 ERROR (SyncWorker_3) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:21:24 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:21:24 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:21:31 ERROR (SyncWorker_9) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:21:34 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:21:34 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:21:41 ERROR (SyncWorker_8) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:21:44 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:21:44 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:21:51 ERROR (SyncWorker_8) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:21:54 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:21:54 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:22:01 ERROR (SyncWorker_6) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:22:04 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:22:04 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:22:12 ERROR (SyncWorker_4) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:22:14 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:22:14 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:22:22 ERROR (SyncWorker_1) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:22:24 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:22:24 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:22:32 ERROR (SyncWorker_4) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:22:34 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:22:35 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:22:42 ERROR (SyncWorker_6) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:22:45 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:22:45 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:22:52 ERROR (SyncWorker_5) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:22:55 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:22:55 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:23:02 ERROR (SyncWorker_3) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:23:05 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:23:05 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:23:12 ERROR (SyncWorker_7) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:23:15 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:23:15 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:23:22 ERROR (SyncWorker_6) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:23:25 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:23:25 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:23:32 ERROR (SyncWorker_7) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:23:34 ERROR (SyncWorker_1) [homeassistant.util.yaml] could not determine a constructor for the tag '!secrtet'
+  in "/home/homeassistant/.homeassistant/configuration.yaml", line 162, column 13
+2018-11-16 21:23:35 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:23:35 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:23:42 ERROR (SyncWorker_5) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:23:45 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:23:45 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:23:52 ERROR (SyncWorker_8) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:23:55 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:23:55 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:23:57 ERROR (SyncWorker_0) [homeassistant.util.yaml] could not determine a constructor for the tag '!secrtet'
+  in "/home/homeassistant/.homeassistant/configuration.yaml", line 162, column 13
+2018-11-16 21:24:02 ERROR (SyncWorker_0) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:24:05 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:24:05 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:24:12 ERROR (SyncWorker_9) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:24:15 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:24:16 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:24:22 ERROR (SyncWorker_8) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json
+2018-11-16 21:24:26 DEBUG (MainThread) [mysensors] Sending 0;255;3;0;2;
+2018-11-16 21:24:26 DEBUG (MainThread) [mysensors] Receiving 0;255;3;0;2;2.2.0
+2018-11-16 21:24:32 ERROR (SyncWorker_8) [mysensors.persistence] Permission denied when writing to /home/homeassistant/.homeassistant/mysensors1.json

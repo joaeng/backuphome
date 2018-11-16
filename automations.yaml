@@ -66,6 +66,7 @@
   - delay: 00:00:01
   - service: homeassistant.turn_off
     entity_id: input_boolean.test_audio_notification
+  id: 0f86a05e2da44b099a7341a8bf009a29
 - alias: 'TeleBot: Plafonnier'
   trigger:
   - platform: event
@@ -76,6 +77,7 @@
   - service: notify.telegram_jocke
     data_template:
       message: Pong =)
+  id: e905d36d9b714c269109322cfae3f1dd
 - alias: telegram bot that replies the temprature
   trigger:
   - platform: event
@@ -89,6 +91,7 @@
       message: Nuvarande lägsta temperatur, {{ states.sensor.temp_altan_222.state
         }}°C
       disable_notification: true
+  id: 44a9a9b0190a498ab712ef389c3b783b
 - alias: CarPresence_ON
   trigger:
     platform: state
@@ -101,6 +104,7 @@
   action:
   - service: cover.open_cover
     entity_id: cover.garage_door
+  id: b41380606cdd4dd8a9540c6cb08ac062
 - alias: CarPresence_OFF
   trigger:
     platform: state
@@ -115,6 +119,7 @@
   action:
   - service: cover.close_cover
     entity_id: cover.garage_door
+  id: c92e369f738d4410b4d8cd116f6427e0
 - action:
   - data:
       message: hejdå
@@ -195,7 +200,15 @@
   - entity_id: sensor.printer
     platform: state
     to: '95'
-- action:
+- id: '1541970471813'
+  alias: 3d pwr off 100%
+  trigger:
+  - entity_id: sensor.printerprogress
+    from: '99'
+    platform: state
+    to: '100'
+  condition: []
+  action:
   - data:
       message: Färdig med utskriften. Stänger av om 5 minuter
     service: notify.telegram_jocke
@@ -203,14 +216,6 @@
   - data:
       entity_id: switch.skrivaren_326
     service: switch.turn_off
-  alias: skrivaren klar
-  condition: []
-  id: '1541970471813'
-  trigger:
-  - entity_id: sensor.printerprogress
-    from: '99'
-    platform: state
-    to: '100'
 - action:
   - data:
       entity_id: switch.espeasy

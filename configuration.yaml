@@ -159,22 +159,14 @@ rest_command:
 
 mqtt:
   broker: 192.168.0.160
-  username: joakim
-  password: julian
+  username: !secret mqtt-usr
+  password: !secret mqtt-psw
   discovery: true
   discovery_prefix: homeassistant
 
-#light:
-#  - platform: mqtt
-#    command_topic: 'homeassistant/knapp/Switch'
 binary_sensor:
   - platform: mqtt
     state_topic: "/sonoff/Monitor_Basement/knapp/Switch"
     name: expriment knapp
     payload_off: '1'
     payload_on: '0'
-
-#camera:
-  #- platform: generic
-  #  still_image_url: http://192.168.0.170:8080/?action=snapshot
-  #  name: octoprint

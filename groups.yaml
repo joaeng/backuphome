@@ -20,6 +20,7 @@
       - sensor.printertemperature
       - switch.skrivaren_326
       - switch.octoprint_325
+      - automation.3d_pwr_off_100
   3d-printer:
     view: yes
     entities:
@@ -112,6 +113,7 @@
       - sensor.printertemperature
       - switch.skrivaren_326
       - switch.octoprint_325
+
 
   Bilen:
     name: Bilen
