@@ -386,3 +386,183 @@ aria2:
   picture:
   track: true
   vendor: FN-LINK TECHNOLOGY LIMITED
+
+espressif:
+  hide_if_away: false
+  icon:
+  mac: 30:AE:A4:C1:8F:44
+  name: espressif
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+espressif_2:
+  hide_if_away: false
+  icon:
+  mac: 30:AE:A4:C0:4B:60
+  name: espressif
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+faff3813f99b:
+  hide_if_away: false
+  icon:
+  mac: FA:FF:38:13:F9:9B
+  name: faff3813f99b
+  picture:
+  track: true
+  vendor: unknown
+
+lisopajen:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:A2:70:6E
+  name: LisöPajen
+  picture:
+  track: true
+  vendor: Raspberry Pi Foundation
+
+esp_5d40a5:
+  hide_if_away: false
+  icon:
+  mac: 60:01:94:5D:40:A5
+  name: ESP 5D40A5
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+5cf8a15f7b2c:
+  hide_if_away: false
+  icon:
+  mac: 5C:F8:A1:5F:7B:2C
+  name: 5cf8a15f7b2c
+  picture:
+  track: true
+  vendor: Murata Manufacturing Co., Ltd.
+
+gamla_paddan:
+  hide_if_away: false
+  icon:
+  mac: B8:FF:61:9B:D7:D8
+  name: Gamla Paddan
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+1458d00bc937:
+  hide_if_away: false
+  icon:
+  mac: 14:58:D0:0B:C9:37
+  name: 1458d00bc937
+  picture:
+  track: true
+  vendor: Hewlett Packard
+
+fc0fe6271bae:
+  hide_if_away: false
+  icon:
+  mac: FC:0F:E6:27:1B:AE
+  name: fc0fe6271bae
+  picture:
+  track: true
+  vendor: Sony Interactive Entertainment Inc.
+
+eab70c62de6e:
+  hide_if_away: false
+  icon:
+  mac: EA:B7:0C:62:DE:6E
+  name: eab70c62de6e
+  picture:
+  track: true
+  vendor: unknown
+
+esp_19fea0:
+  hide_if_away: false
+  icon:
+  mac: 5C:CF:7F:19:FE:A0
+  name: ESP 19FEA0
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+807d3a184783:
+  hide_if_away: false
+  icon:
+  mac: 80:7D:3A:18:47:83
+  name: 807d3a184783
+  picture:
+  track: true
+  vendor: unknown
+
+newdevice_2:
+  hide_if_away: false
+  icon:
+  mac: 80:7D:3A:18:56:C0
+  name: newdevice
+  picture:
+  track: true
+  vendor: unknown
+
+newdevice_3:
+  hide_if_away: false
+  icon:
+  mac: BC:DD:C2:0D:E3:70
+  name: newdevice
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+newdevice_4:
+  hide_if_away: false
+  icon:
+  mac: BC:DD:C2:0E:41:13
+  name: newdevice
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+newdevice_5:
+  hide_if_away: false
+  icon:
+  mac: BC:DD:C2:0E:43:8A
+  name: newdevice
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+newdevice_6:
+  hide_if_away: false
+  icon:
+  mac: BC:DD:C2:0E:7C:43
+  name: newdevice
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+newdevice_7:
+  hide_if_away: false
+  icon:
+  mac: BC:DD:C2:0E:7E:DC
+  name: newdevice
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+newdevice_8:
+  hide_if_away: false
+  icon:
+  mac: 80:7D:3A:18:57:69
+  name: newdevice
+  picture:
+  track: true
+  vendor: unknown
+
+00c2c6ce8fba:
+  hide_if_away: false
+  icon:
+  mac: 00:C2:C6:CE:8F:BA
+  name: 00c2c6ce8fba
+  picture:
+  track: true
+  vendor: Intel Corporate

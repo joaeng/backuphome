@@ -15,6 +15,9 @@
   - data:
       message: Drar ner gardin om 15 minuter
     service: notify.telegram_jocke
+  - data:
+      message: Drar ner gardin om 15 minuter
+    service: notify.telegram_helena
   alias: Påminnelse Gardin
   condition: []
   id: '1526639185280'
@@ -86,3 +89,137 @@
       message: Nuvarande lägsta temperatur, {{ states.sensor.temp_altan_222.state
         }}°C
       disable_notification: true
+- alias: CarPresence_ON
+  trigger:
+    platform: state
+    entity_id: binary_sensor.CarPresence
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: cover.garage_door
+    state: closed
+  action:
+  - service: cover.open_cover
+    entity_id: cover.garage_door
+- alias: CarPresence_OFF
+  trigger:
+    platform: state
+    entity_id: binary_sensor.CarPresence
+    to: 'off'
+    for:
+      minutes: 1
+  condition:
+  - condition: state
+    entity_id: cover.garage_door
+    state: open
+  action:
+  - service: cover.close_cover
+    entity_id: cover.garage_door
+- action:
+  - data:
+      message: hejdå
+    service: notify.telegram_jocke
+  - data:
+      message: Tackar ! Älskar dig
+    service: notify.telegram_helena
+  alias: hejdå
+  condition: []
+  id: '1535112441251'
+  trigger:
+  - entity_id: binary_sensor.carpresence
+    platform: state
+    to: 'off'
+- action:
+  - data:
+      message: Välkommen till villa moga
+    service: notify.telegram_jocke
+  - data:
+      message: Jocke är vid porten. Lite hjälp kanske ?
+    service: notify.telegram_helena
+  alias: Välkommen
+  condition: []
+  id: '1535114635500'
+  trigger:
+  - entity_id: binary_sensor.carpresence
+    platform: state
+    to: 'on'
+- action:
+  - data:
+      message: tack
+    service: notify.telegram_jocke
+  alias: vattnat
+  condition: []
+  id: '1537884975135'
+  trigger:
+  - entity_id: binary_sensor.water_sensor_2_3
+    from: 'on'
+    platform: state
+    to: 'off'
+- action:
+  - data:
+      entity_id: switch.espeasy
+    service: switch.turn_on
+  - delay: 00:30:00
+  - data:
+      message: släcker strax
+    service: notify.telegram_jocke
+  - data:
+      entity_id: switch.espeasy
+    service: switch.turn_off
+  alias: esp.test.on
+  condition: []
+  id: '1537902808015'
+  trigger:
+  - entity_id: binary_sensor.expriment_knapp
+    from: 'off'
+    platform: state
+    to: 'on'
+- action:
+  - data:
+      message: 'Ny uppdatering till hass hemma '
+    service: notify.telegram_jocke
+  alias: Update-Notify
+  condition: []
+  id: '1537979871607'
+  trigger:
+  - entity_id: updater.updater
+    platform: state
+- action:
+  - data:
+      message: 95% klart på utskriften
+    service: notify.telegram_jocke
+  alias: printer
+  condition: []
+  id: '1541949682710'
+  trigger:
+  - entity_id: sensor.printer
+    platform: state
+    to: '95'
+- action:
+  - data:
+      message: Färdig med utskriften. Stänger av om 5 minuter
+    service: notify.telegram_jocke
+  - delay: 00:05:00
+  - data:
+      entity_id: switch.skrivaren_326
+    service: switch.turn_off
+  alias: skrivaren klar
+  condition: []
+  id: '1541970471813'
+  trigger:
+  - entity_id: sensor.printerprogress
+    from: '99'
+    platform: state
+    to: '100'
+- action:
+  - data:
+      entity_id: switch.espeasy
+    service: switch.turn_on
+  alias: expriment knapp
+  condition: []
+  id: '1542125454618'
+  trigger:
+  - entity_id: binary_sensor.expriment_knapp
+    from: 'off'
+    platform: state
+    to: 'on'

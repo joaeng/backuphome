@@ -12,12 +12,14 @@ homeassistant:
   time_zone: Europe/Stockholm
   # Customization file
   customize: !include customize.yaml
+recorder:
 
 # Show links to resources in log and frontend
 #introduction:
 
 # Enables the frontend
 frontend:
+
 
 # Enables configuration UI
 config:
@@ -56,29 +58,67 @@ map:
 sun:
 
 # Weather prediction
-sensor:
-  - platform: yr
-  - platform: fitbit
-    clock_format: 24H
-    monitored_resources:
-      - "body/weight"
-      - "activities/steps"
-  - platform: template
-    sensors:
-      vatten_larm:
-          unit_of_measurement: '%'
-          value_template: >-
-            {% if is_state("binary_sensor.water_sensor_2_3","off") %}
-              100
-            {% else %}
-              0
-            {% endif %}
-  - platform: min_max
-    type: min
-    name: Lägsta_temp
-    entity_ids:
-      - sensor.utesovrum_346
-      - sensor.temp_altan_222
+sensor: !include sensors.yaml
+#  - platform: mqtt
+#    state_topic: "homeassistant/temperatur/Humidity/#"
+#    name: "esp-Humidity"
+#    unit_of_measurement: '%'
+#    icon: mdi:water-percent
+#  - platform: mqtt
+#    state_topic: "homeassistant/temperatur/Temperature/#"
+#    name: "esp-Temperature"
+#    unit_of_measurement: '°C'
+
+#  - platform: mqtt
+#    state_topic: "homeassistant/#"
+#  - platform: yr
+#  - platform: fitbit
+#    clock_format: 24H
+#    monitored_resources:
+#      - "body/weight"
+#      - "activities/steps"
+#  - platform: template
+#    sensors:
+#      vatten_larm:
+#          unit_of_measurement: '%'
+#          value_template: >-
+#            {% if is_state("binary_sensor.water_sensor_2_3","off") %}
+#              100
+#            {% else %}
+#              0
+#            {% endif %}
+  #- platform: min_max
+  #  type: min
+  #  name: Lägsta_temp
+  #  entity_ids:
+  #    - sensor.utesovrum_346
+  #    - sensor.temp_altan_222
+#  - platform: mqtt
+#    name: Printer-progress
+#    state_topic: "octoprint/progress/#"
+#    unit_of_measurement: '%'
+#    value_template: "{{ value_json.progress }}"
+#
+#  - platform: mqtt
+#    name: Printer-Temperature
+#    icon: mdi:temperature-celsius
+#    state_topic: "octoprint/temperature/tool0"
+#    unit_of_measurement: 'C'
+#    value_template: "{{ value_json.actual }}"
+#  - platform: mqtt
+#    name: Printer-Object
+#    icon: mdi:temperature-celsius
+#    state_topic: "octoprint/progress/#"
+#    json_attributes:
+#      - "progress"
+#      - "_timestamp"
+#      - "location"
+#      - "path"
+#    monitored_resources:
+#      - "progress"
+#    unit_of_measurement: 'C'
+#    value_template: "{{ value_json.path }}"
+
 
 # Text to speech
 tts:
@@ -97,12 +137,12 @@ script: !include scripts.yaml
 ### vera
 vera:
   vera_controller_url: http://192.168.0.59:3480/
-  #exclude: [183, 274, 276, 115, 215, 216, 114, 121, 182, 112, 344, 345, 343, 261, 213, 214, 319, 76, 317, 321, 308, 118, 116, 303, 233, 230, 232, 231, 101, 234]
+  exclude: [117, 359, 222, 224, 346, 183, 274, 276, 115, 215, 216, 114, 121, 182, 112, 344, 345, 343, 261, 213, 214, 319, 76, 317, 321, 308, 118, 303, 233, 230, 232, 231, 101, 234, 200, 29, 4, 31, 27, 125, 348, 348, 212, 30, 347, 28, 49, 229, 135, 18, 140, 44, 36, 8, 5, 4, 10, 6, 23, 50, 19, 40, 49, 15, 16, 26, 25, 42, 47, 37, 31, 32, 48, 35, 33, 46, 8, 5, 10, 4, 6, 23]
 device_tracker:
   - platform: unifi
     host: 192.168.0.4
     username: hassis
-    password: jullebulle
+    password: julle
     verify_ssl: False
     interval_seconds: 10
     consider_home: 180
@@ -115,29 +155,36 @@ panel_iframe:
 
 media_player:
   - platform: sonos
-
-
-octoprint:
-  host: 192.168.0.170
-  api_key: 9579458278874B70BE52087BCEE6D78C
-  bed: false
-  number_of_tools: 1
-
-verisure:
-   username: Joakim.engberg@gmail.com
-   password: julian88
+    hosts:
+      - 192.168.0.60
+  - platform: cast    
 
 switch:
-  platform: command_line
-  switches:
-    odling:
-        command_on: "/usr/bin/curl -X GET http://192.168.0.59:3480/data_request?id=variableset&DeviceNum=359&serviceId=urn:micasaverde-com:serviceId:HumiditySensor1&Variable=CurrentLevel&Value=0"
-    arest_pin_four:
-      command_on: "/usr/bin/curl -X GET http://192.168.0.179/control?cmd=GPIO,5,0"
-      command_off: "/usr/bin/curl -X GET http://192.168.0.179/control?cmd=GPIO,5,1"
-    # command_state: "/usr/bin/curl -X GET http://192.168.1.10/digital/4"
-      value_template: '{{ value == "1" }}'
-      friendly_name: espeasy
+  - platform: mqtt
+    name: "espeasy"
+    state_topic: '/sonoff/Monitor_Basement/sw/state'
+    command_topic: '/sonoff/Monitor_Basement/gpio/2'
+    payload_on: "1"
+    payload_off: "0"
+    state_on: "1"
+    state_off: "0"
+    retain: true
+    #optimistic: false
+
+
+#  platform: command_line
+#  switches:
+#
+#    odling:
+#        command_on: "/usr/bin/curl -X GET http://192.168.0.59:3480/data_request?id=variableset&DeviceNum=359&serviceId=urn:micasaverde-com:serviceId:HumiditySensor1&Variable=CurrentLevel&Value=0"
+#    arest_pin_four:
+#      command_on: "/usr/bin/curl -X GET http://192.168.0.179/control?cmd=GPIO,5,0"
+#      command_off: "/usr/bin/curl -X GET http://192.168.0.179/control?cmd=GPIO,5,1"
+#    # command_state: "/usr/bin/curl -X GET http://192.168.1.10/digital/4"
+#      value_template: '{{ value == "1" }}'
+#      friendly_name: espeasy
+
+
 mysensors:
   gateways:
     device: '192.168.0.177'
@@ -152,6 +199,9 @@ plant:
   Hydroponiskodling:
     sensors:
       moisture: sensor.vatten_larm
+      brightness: sensor.plantlampa
+      temperature: sensor.temperatur_vardagsru_116
+      battery: sensor.plantwatt
 
 telegram_bot:
   - platform: polling
@@ -166,9 +216,29 @@ notify:
   - name: Telegram_Helena
     platform: telegram
     chat_id: 616013004
-    
+
 rest_command:
     vatten_larm_vera:
       url: 'http://192.168.0.59:3480/data_request?id=variableset&DeviceNum=359&serviceId=urn:micasaverde-com:serviceId:HumiditySensor1&Variable=CurrentLevel&Value=0'
-    
 
+mqtt:
+  broker: 192.168.0.160
+  username: joakim
+  password: julian
+  discovery: true
+  discovery_prefix: homeassistant
+
+#light:
+#  - platform: mqtt
+#    command_topic: 'homeassistant/knapp/Switch'
+binary_sensor:
+  - platform: mqtt
+    state_topic: "/sonoff/Monitor_Basement/knapp/Switch"
+    name: expriment knapp
+    payload_off: '1'
+    payload_on: '0'
+
+#camera:
+  #- platform: generic
+  #  still_image_url: http://192.168.0.170:8080/?action=snapshot
+  #  name: octoprint

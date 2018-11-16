@@ -84,8 +84,7 @@ device_tracker.elpartner:
   hidden: true
 device_tracker.nya_ipaden:
   hidden: true
-device_tracker.switch_tvbank:
-  hidden: true
+device_tracker.switch_tvbank: {}
 device_tracker.androidbf919a96b3bfe3e0:
   hidden: true
 sensor.brand_hall_entre_humidity:
@@ -99,4 +98,40 @@ sensor.brand_v_rum_temperature:
 device_tracker.newdevice:
   friendly_name: Esp-Odling
 device_tracker.sonoszp:
+  friendly_name: vardagsrum
+sensor.incubatortempandhum_9_1:
+  friendly_name: Fukt 1
+sensor.incubatortempandhum_9_2:
+  friendly_name: Temp 1
+sensor.incubatortempandhum_9_3:
+  friendly_name: Fukt 2
+sensor.incubatortempandhum_9_4:
+  friendly_name: Temp 2
+sensor.incubatortempandhum_9_5:
+  friendly_name: Fukt 3
+sensor.incubatortempandhum_9_6:
+  friendly_name: Temp 3
+sensor.incubatortempandhum_9_8:
+  friendly_name: Temp 4
+sensor.incubatortempandhum_9_10:
+  friendly_name: Temp 5
+  unit_of_measurement: °C
+sensor.incubatortempandhum_9_7:
+  friendly_name: Fukt 4
+sensor.incubatortempandhum_9_9: {}
+sensor.esphumidity:
+  icon: mdi:water-percent
+sensor.printertemperature:
+  icon: mdi:temperature-celsius
+sensor.printerprogress:
+  icon: mdi:gauge
+binary_sensor.water_sensor_2_3:
   hidden: true
+sensor.vatten_larm:
+  hidden: true
+binary_sensor.expriment_knapp:
+  template:
+    icon: if (state > off) return 'mdi:television'; else return 'mdi:television-off';
+    rgb_color: if (state > off) return [251, 210, 41]; else return [54, 95, 140];
+media_player.ue46es6805_ue46es6805:
+  friendly_name: Tv

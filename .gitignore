@@ -2,3 +2,6 @@ home-assistant_v2.db
 ownshit/*
 secrets.yaml
 tts/*
+fitbit.conf
+*.log
+

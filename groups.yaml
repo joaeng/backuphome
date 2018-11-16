@@ -1,0 +1,122 @@
+  default_view:
+    view: yes
+    icon: mdi:home
+    entities:
+      - group.kitchen
+      - group.awesome_people
+      - group.climate
+    # - group.Basement
+      - group.klimat
+      - sun.sun
+      - device_tracker.helenas_mobil
+      - device_tracker.joakims_mobil
+############################# 3d-printer
+  3dprinter:
+    name: 3D-Printer
+    #view: yes
+    entities:
+      - sensor.printerobject
+      - sensor.printerprogress
+      - sensor.printertemperature
+      - switch.skrivaren_326
+      - switch.octoprint_325
+  3d-printer:
+    view: yes
+    entities:
+      - group.3dprinter
+      - sun.sun
+      - device_tracker.helenas_mobil
+      - device_tracker.joakims_mobil
+############################ Lägenhet
+  sovrum:
+    name: Sovrum
+    #view: yes
+    entities:
+      - switch.jocke_mobil_205
+      - switch.helenas_mobil_185
+      - device_tracker.sonos_sovrum
+      #- cover.gardin_sovrum_225
+  Vardagsrum:
+    name: Vardagsrum
+    #view: yes
+    entities:
+      - media_player.vardagsrum_2
+      #-
+      - plant.hydroponiskodling
+  Grovkok:
+    name: Grovkök
+    entities:
+      - binary_sensor.rorelse_grovkok
+  Lägenhet:
+    view: yes
+    entities:
+      - group.sovrum
+      - group.Vardagsrum
+      - sun.sun
+      - sensor.yr_temperature
+      - sensor.yr_symbol
+      - sensor.yr_humidity
+      - device_tracker.helenas_mobil
+      - device_tracker.joakims_mobil
+############################ Teknik
+
+  ups:
+    name: UPS
+    #view: yes
+    entities:
+      - sensor.nut_ups_input_voltage
+      - sensor.nut_ups_battery_runtime
+      - sensor.nut_ups_load
+      - sensor.nut_ups_status_data
+  div:
+    name: Diverse
+    #view: yes
+    entities:
+  #    - sensor.nut_ups_input_voltage
+  #    - sensor.nut_ups_battery_runtime
+  #    - sensor.nut_ups_load
+       - binary_sensor.onlinesensor
+
+  Teknik:
+    view: yes
+    entities:
+      - group.ups
+      - group.div
+      - sun.sun
+      - sensor.yr_temperature
+      - sensor.yr_symbol
+      - sensor.yr_humidity
+      - device_tracker.helenas_mobil
+      - device_tracker.joakims_mobil
+###################################################
+
+  mysensors:
+    name: Mysensors flera givare
+    #view: yes
+    entities:
+      - sensor.guesthouseclimate_9_0
+      - sensor.guesthouseclimate_9_1
+#  esp:
+#    name: EspEasy - Testing
+#    entities:
+#      - sensor.esptemperature
+#      - sensor.esphumidity
+#      - binary_sensor.espbinary_sensor
+#      - switch.espswitch
+  3d-Printer:
+    name: 3D-Printer
+    #view: yes
+    entities:
+      - sensor.printerobject
+      - sensor.printerprogress
+      - sensor.printertemperature
+      - switch.skrivaren_326
+      - switch.octoprint_325
+
+  Bilen:
+    name: Bilen
+    #view: yes
+    entities:
+      - binary_sensor.carpresence
+      - sensor.carpresencesignal
+      - sensor.carpresenceuptime

@@ -1,43 +1,7 @@
-media_player.sovrum_chromecast:
-  name:
-  platform: cast
-  unique_id: 6a11b1b6-ea9d-9d68-6b25-930ee6a4fa36
 media_player.vardagsrum:
   name:
   platform: cast
   unique_id: 453600c6-b584-e7c5-8f3f-2b42e29ca725
-media_player.chrome:
-  name:
-  platform: plex
-  unique_id: 8kajw7zr1nc64tv9wnosq78g
-media_player.joakims_ipad:
-  name:
-  platform: plex
-  unique_id: CEFCEBB9-4A0F-4E9C-A108-3C75EC3DACD4
-media_player.tv_ue46es6805:
-  name:
-  platform: plex
-  unique_id: cpcb3exskmbj4
-media_player.galaxy_s7:
-  name:
-  platform: plex
-  unique_id: 566e8a565de6e1af-com-plexapp-android
-media_player.chrome_2:
-  name:
-  platform: plex
-  unique_id: q4hgjhk3dib3wh1t0murb649
-media_player.badrum:
-  name:
-  platform: sonos
-  unique_id: RINCON_000E58C45EBE01400
-media_player.altan:
-  name:
-  platform: sonos
-  unique_id: RINCON_B8E937B0174201400
-media_player.christoffer:
-  name:
-  platform: sonos
-  unique_id: RINCON_B8E937E95B1001400
 media_player.sovrum:
   name:
   platform: sonos
@@ -46,15 +10,15 @@ media_player.matrum:
   name:
   platform: sonos
   unique_id: RINCON_000E5838E78601400
+media_player.christoffer:
+  name:
+  platform: sonos
+  unique_id: RINCON_B8E937E95B1001400
+media_player.badrum:
+  name:
+  platform: sonos
+  unique_id: RINCON_000E58C45EBE01400
 media_player.vardagsrum_2:
   name:
   platform: sonos
   unique_id: RINCON_000E58282F1001400
-media_player.chrome_3:
-  name:
-  platform: plex
-  unique_id: 57rvrbttevlel7nic4qd9s17
-media_player.honor_9:
-  name:
-  platform: plex
-  unique_id: dad2e514e31c28d3-com-plexapp-android

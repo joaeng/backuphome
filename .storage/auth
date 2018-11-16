@@ -1,0 +1,42 @@
+{
+    "data": {
+        "credentials": [
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "joakim"
+                },
+                "id": "d56a9671b4cd4bb283a0bfb3ea44b629",
+                "user_id": "2a36e2931c4c4c73934b6841544a18f2"
+            }
+        ],
+        "refresh_tokens": [
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "http://192.168.0.160:8123/",
+                "client_name": null,
+                "created_at": "2018-11-15T19:39:54.708663+00:00",
+                "id": "42c579c82851452d803cb117876aca5b",
+                "jwt_key": "eafb00dd0f7beb43217bf5216f09b40f4ad07265932f2c4ec6b5759ba7da806c1b746b97330b2204cb6b548ba8c26664ede8a6d3ba6c13d40d174ad403ae131b",
+                "last_used_at": "2018-11-15T19:39:54.708745+00:00",
+                "last_used_ip": "192.168.0.127",
+                "token": "91c2a72732bd7f4502e0b2b9a48dd16a208f765d25c6ffa3adb2745fe69f570c54a08fc6e81415ec9cd991b7bc5c5955af8f806bc47938d01ff6856fdd60c15d",
+                "token_type": "normal",
+                "user_id": "2a36e2931c4c4c73934b6841544a18f2"
+            }
+        ],
+        "users": [
+            {
+                "id": "2a36e2931c4c4c73934b6841544a18f2",
+                "is_active": true,
+                "is_owner": true,
+                "name": "joakim engberg",
+                "system_generated": false
+            }
+        ]
+    },
+    "key": "auth",
+    "version": 1
+}
