@@ -170,3 +170,7 @@ binary_sensor:
     name: expriment knapp
     payload_off: '1'
     payload_on: '0'
+
+octoprint:
+  host: 192.168.0.170
+  api_key: 9579458278874B70BE52087BCEE6D78C
