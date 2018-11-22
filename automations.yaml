@@ -284,7 +284,7 @@
   - entity_id: binary_sensor.verisure_113
     from: 'off'
     platform: state
-    to: till
+    to: 'on'
   condition:
   - after: sunset
     condition: sun
