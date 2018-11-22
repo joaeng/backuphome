@@ -22,10 +22,6 @@
   condition: []
   id: '1526639185280'
   trigger:
-  - at: '21:15'
-    platform: time
-
-  trigger:
   - entity_id: device_tracker.joakims_mobil
     from: not_home
     platform: state
@@ -210,3 +206,89 @@
     from: 'off'
     platform: state
     to: 'on'
+- action:
+  - data:
+      payload_template: '{{ states(''sensor.sparsnas_energy_consumption_over_time'')
+        }}'
+      retain: 'true'
+      topic: template/kwh/month
+    service: mqtt.publish
+  alias: Sparsnäs monthly consumption
+  trigger:
+    platform: time
+    at: 00:00:01
+  condition:
+    condition: and
+    conditions:
+    - condition: template
+      value_template: '{{ now().day | string == "1" }}'
+    - condition: or
+      conditions:
+      - condition: template
+        value_template: '{{ now().month | string == "1" }}'
+      - condition: template
+        value_template: '{{ now().month | string == "2" }}'
+      - condition: template
+        value_template: '{{ now().month | string == "3" }}'
+      - condition: template
+        value_template: '{{ now().month | string == "4" }}'
+      - condition: template
+        value_template: '{{ now().month | string == "5" }}'
+      - condition: template
+        value_template: '{{ now().month | string == "6" }}'
+      - condition: template
+        value_template: '{{ now().month | string == "7" }}'
+      - condition: template
+        value_template: '{{ now().month | string == "8" }}'
+      - condition: template
+        value_template: '{{ now().month | string == "9" }}'
+      - condition: template
+        value_template: '{{ now().month | string == "10" }}'
+      - condition: template
+        value_template: '{{ now().month | string == "11" }}'
+      - condition: template
+        value_template: '{{ now().month | string == "12" }}'
+  id: '1516722867362'
+- action:
+  - data:
+      payload_template: '{{ states(''sensor.sparsnas_energy_consumption_over_time'')}}'
+      retain: 'true'
+      topic: template/kwh/day
+    service: mqtt.publish
+  alias: Sparsnäs daily consumption
+  condition: []
+  id: '1516806539856'
+  trigger:
+  - at: 00:00:02
+    platform: time
+- action:
+  - data:
+      entity_id: automation.sparsnas_daily_consumption
+    service: automation.trigger
+  - data:
+      entity_id: automation.sparsnas_monthly_consumption
+    service: automation.trigger
+  alias: trigger-sparsnas-if-unknown
+  condition:
+  - condition: state
+    entity_id: sensor.sparsnas_template_kwh_sensor_month
+    state: Unknown
+  id: '1519996400010'
+  trigger:
+  - entity_id: sensor.sparsnas_energy_consumption_over_time
+    from: unknown
+    platform: state
+- id: '1542913726018'
+  alias: verisure tänd
+  trigger:
+  - entity_id: binary_sensor.verisure_113
+    from: 'off'
+    platform: state
+    to: till
+  condition:
+  - after: sunset
+    condition: sun
+  action:
+  - data:
+      entity_id: scene.belysning_kvall_pa
+    service: scene.turn_on

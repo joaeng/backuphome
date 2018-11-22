@@ -73,6 +73,9 @@ script: !include scripts.yaml
 
 
 
+
+
+
 ### vera
 vera:
   vera_controller_url: http://192.168.0.59:3480/
@@ -98,13 +101,13 @@ media_player:
 switch:
   - platform: mqtt
     name: "espeasy"
-    state_topic: '/sonoff/Monitor_Basement/sw/state'
-    command_topic: '/sonoff/Monitor_Basement/gpio/2'
+    state_topic: '/sonoff/tv-bank/relay/state'
+    command_topic: '/sonoff/tv-bank/gpio/12'
     payload_on: "1"
     payload_off: "0"
     state_on: "1"
     state_off: "0"
-    retain: true
+    #retain: true
     #optimistic: false
 
 
@@ -174,3 +177,7 @@ binary_sensor:
 octoprint:
   host: 192.168.0.170
   api_key: 9579458278874B70BE52087BCEE6D78C
+influxdb:
+  database: home_assistant
+  username: hass
+  password: jul1an

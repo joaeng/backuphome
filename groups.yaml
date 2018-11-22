@@ -3,13 +3,19 @@
     icon: mdi:home
     entities:
       - group.kitchen
-      - group.awesome_people
-      - group.climate
+      - group.sparsnas
+      - group.vader
     # - group.Basement
-      - group.klimat
+      - weather.smhi_home
       - sun.sun
       - device_tracker.helenas_mobil
       - device_tracker.joakims_mobil
+  vader:
+    name: väder
+    entities:
+      - weather.smhi_home
+
+
 ############################# 3d-printer
   3dprinter:
     name: 3D-Printer
@@ -122,3 +128,14 @@
       - binary_sensor.carpresence
       - sensor.carpresencesignal
       - sensor.carpresenceuptime
+  sparsnas:
+    name: Energy Consumption
+    view: no
+    icon: mdi:flash-circle
+    entities:
+      - sensor.sparsnas_energy_consumption_momentary
+      - sensor.sparsnas_energy_consumption_over_time
+      - sensor.sparsnas_battery_remaining
+      - sensor.sparsnas_frequency_error
+      - sensor.kwh_today
+      - sensor.kwh_current_month
