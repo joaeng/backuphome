@@ -50,6 +50,7 @@
       #- media_player.vardagsrum_2
       #- media_player.vardagsrum
       - plant.hydroponiskodling
+      - group.Radio
   Grovkok:
     name: Grovkök
     entities:

@@ -12,6 +12,7 @@ homeassistant:
   time_zone: Europe/Stockholm
   # Customization file
   customize: !include customize.yaml
+  packages: !include_dir_named packages
 recorder:
 
 # Show links to resources in log and frontend
@@ -94,9 +95,10 @@ panel_iframe:
     title: MDI Icon Index
     icon: mdi:vector-square
     url: https://cdn.rawgit.com/james-fry/home-assistant-mdi/efd95d7a/home-assistant-mdi.html
+cast:
+  media_player:
+    - host: 192.168.0.7
 
-media_player:
-  - platform: cast
 
 switch:
   - platform: mqtt
@@ -181,3 +183,8 @@ influxdb:
   database: home_assistant
   username: hass
   password: jul1an
+
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret xiaomi_vacuum_ip
+    token: !secret xiaomi_vacuum_token

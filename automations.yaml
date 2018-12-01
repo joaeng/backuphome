@@ -11,21 +11,19 @@
     from: 'off'
     platform: state
     to: 'on'
-- action:
+- id: '1526639185280'
+  alias: Påminnelse Gardin
+  trigger:
+  - at: '21:15'
+    platform: time
+  condition: []
+  action:
   - data:
       message: Drar ner gardin om 15 minuter
     service: notify.telegram_jocke
   - data:
       message: Drar ner gardin om 15 minuter
     service: notify.telegram_helena
-  alias: Påminnelse Gardin
-  condition: []
-  id: '1526639185280'
-  trigger:
-  - entity_id: device_tracker.joakims_mobil
-    from: not_home
-    platform: state
-    to: home
 - alias: Notification Audio - Test
   trigger:
   - platform: state
@@ -279,12 +277,12 @@
     from: unknown
     platform: state
 - id: '1542913726018'
-  alias: verisure tänd
+  alias: tänd när vi kommer hem
   trigger:
-  - entity_id: binary_sensor.verisure_113
-    from: 'off'
+  - entity_id: device_tracker.helenas_mobil, device_tracker.joakims_mobil
+    from: away
     platform: state
-    to: 'on'
+    to: home
   condition:
   - after: sunset
     condition: sun
