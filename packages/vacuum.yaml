@@ -1,0 +1,7 @@
+###############################################################################
+#   @author         :   joakim engberg
+#   @date           :   01/12/2018
+#   @package        :   Xiaomi Robot Vacuum
+#   @description    :   Xiaomi Robot Vacuum Control, Zones and Schedule
+###############################################################################
+homeassistant:
