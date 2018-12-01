@@ -178,11 +178,11 @@ binary_sensor:
 
 octoprint:
   host: 192.168.0.170
-  api_key: 9579458278874B70BE52087BCEE6D78C
+  api_key: !secret octoprint
 influxdb:
-  database: home_assistant
-  username: hass
-  password: jul1an
+  database: !secret influx_db 
+  username: !secret influx_usr
+  password: !secret influx_pass
 
 vacuum:
   - platform: xiaomi_miio
