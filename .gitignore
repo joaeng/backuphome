@@ -4,4 +4,15 @@ secrets.yaml
 tts/*
 fitbit.conf
 *.log
+..gitignore.swp
+.storage/
+.uuid
+deps/
+harmony_harmony_hub.conf
+known_devices.yaml
+mysensbackup.json
+mysensors1.json
+mysensors1.pickle
+plex.conf
+sparsnas_mqtt.yaml
 
