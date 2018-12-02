@@ -1,4 +1,5 @@
 
+
   - platform: mqtt
     name: Printer-progress
     state_topic: "octoprint/progress/#"

@@ -295,3 +295,40 @@
   - data:
       entity_id: scene.belysning_kvall_pa
     service: scene.turn_on
+- id: '1543786588685'
+  alias: 'På minnelse dammsugning '
+  trigger:
+  - at: '19:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  - condition: time
+    weekday:
+    - sun
+    - tue
+    - thu
+  action:
+  - data:
+      message: Dammsugning imorgon
+    service: notify.telegram_jocke
+  - data:
+      message: Dammsugning imorgon
+    service: notify.telegram_helena
+- id: '1543787373178'
+  alias: Dammsugning
+  trigger:
+  - at: '10:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  - condition: time
+    weekday:
+      - mon
+      - wed
+      - fri
+  action:
+  - service: vacuum.turn_on
