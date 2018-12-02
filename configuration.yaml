@@ -88,7 +88,8 @@ device_tracker:
     password: !secret ubnt-password
     verify_ssl: False
     interval_seconds: 10
-    consider_home: 180
+    consider_home: 30
+    detection_time: 30
 
 panel_iframe:
   mdiindex:
@@ -180,7 +181,7 @@ octoprint:
   host: 192.168.0.170
   api_key: !secret octoprint
 influxdb:
-  database: !secret influx_db 
+  database: !secret influx_db
   username: !secret influx_usr
   password: !secret influx_pass
 

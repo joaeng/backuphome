@@ -279,13 +279,18 @@
 - id: '1542913726018'
   alias: tänd när vi kommer hem
   trigger:
-  - entity_id: device_tracker.helenas_mobil, device_tracker.joakims_mobil
-    from: away
+  - entity_id: device_tracker.helenas_mobil
+    from: not_home
+    platform: state
+    to: home
+  - entity_id: device_tracker.joakims_mobil
+    from: not_home
     platform: state
     to: home
   condition:
-  - after: sunset
-    condition: sun
+  - after: '14:00'
+    before: '21:00'
+    condition: time
   action:
   - data:
       entity_id: scene.belysning_kvall_pa

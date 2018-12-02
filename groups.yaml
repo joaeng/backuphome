@@ -39,7 +39,9 @@
     name: Sovrum
     #view: yes
     entities:
+      
       - switch.jocke_mobil_205
+
       - switch.helenas_mobil_185
       - device_tracker.sonos_sovrum
       #- cover.gardin_sovrum_225
@@ -90,7 +92,7 @@
     entities:
       - group.ups
       - group.div
-      - sun.sun
+      - vacuum.xiaomi_vacuum_cleaner
       - sensor.yr_temperature
       - sensor.yr_symbol
       - sensor.yr_humidity
