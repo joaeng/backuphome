@@ -103,9 +103,9 @@ cast:
 
 switch:
   - platform: mqtt
-    name: "espeasy"
-    state_topic: '/sonoff/tv-bank/relay/state'
-    command_topic: '/sonoff/tv-bank/gpio/12'
+    name: "Printer-Light"
+    state_topic: '/Print-Light/sw/state'
+    command_topic: '/Print-Light/gpio/12'
     payload_on: "1"
     payload_off: "0"
     state_on: "1"
@@ -177,8 +177,13 @@ binary_sensor:
     payload_off: '1'
     payload_on: '0'
   - platform: workday
+    name: workday_imorgon
     country: SE
-    days_offset: 1  
+    days_offset: 1
+  - platform: workday
+    name: workday_idag
+    country: SE
+
 
 
 octoprint:

@@ -26,6 +26,7 @@
       - sensor.printertemperature
       - switch.skrivaren_326
       - switch.octoprint_325
+      - switch.printerlight
       - automation.3d_pwr_off_100
   3d-printer:
     view: yes
@@ -39,7 +40,7 @@
     name: Sovrum
     #view: yes
     entities:
-      
+
       - switch.jocke_mobil_205
 
       - switch.helenas_mobil_185

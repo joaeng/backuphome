@@ -327,8 +327,38 @@
     state: 'on'
   - condition: time
     weekday:
-      - mon
-      - wed
-      - fri
+    - mon
+    - wed
+    - fri
   action:
   - service: vacuum.turn_on
+- id: '1543951030518'
+  alias: print-light-on
+  trigger:
+  - event_data:
+      command: /p1
+    event_type: telegram_command
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: switch.printerlight
+    service: switch.turn_on
+  - data:
+      message: Tänder belysningen vid skrivaren
+    service: notify.telegram_jocke
+- id: '1543951370906'
+  alias: print-light-off
+  trigger:
+  - event_data:
+      command: /p0
+    event_type: telegram_command
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: switch.printerlight
+    service: switch.turn_off
+  - data:
+      message: Släcker belysningen vid skrivaren
+    service: notify.telegram_jocke
