@@ -17,6 +17,15 @@
 
 
 ############################# 3d-printer
+#  3d-Printer:
+#    name: 3D-Printer
+#    #view: yes
+#    entities:
+#      - sensor.printerobject
+#      - sensor.printerprogress
+#      - sensor.printertemperature
+#      - switch.skrivaren_326
+#      - switch.octoprint_325
   3dprinter:
     name: 3D-Printer
     #view: yes
@@ -100,7 +109,23 @@
       - device_tracker.helenas_mobil
       - device_tracker.joakims_mobil
 ###################################################
+############################# Labbet
+  labbet:
+    name: Labbet
+    #view: yes
+    entities:
+    
+      - binary_sensor.expriment_knapp
 
+  Labbet:
+    view: yes
+    entities:
+      - group.labbet
+      - sun.sun
+      - device_tracker.helenas_mobil
+      - device_tracker.joakims_mobil
+
+############################# /Labbet
   mysensors:
     name: Mysensors flera givare
     #view: yes
@@ -114,15 +139,7 @@
 #      - sensor.esphumidity
 #      - binary_sensor.espbinary_sensor
 #      - switch.espswitch
-  3d-Printer:
-    name: 3D-Printer
-    #view: yes
-    entities:
-      - sensor.printerobject
-      - sensor.printerprogress
-      - sensor.printertemperature
-      - switch.skrivaren_326
-      - switch.octoprint_325
+
 
 
   Bilen:
