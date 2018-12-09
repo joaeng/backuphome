@@ -1,0 +1,195 @@
+###############################################################################
+#   @author         :   Trent Stanton
+#   @date           :   19/05/2018
+#   @package        :   Xiaomi Robot Vacuum
+#   @description    :   Xiaomi Robot Vacuum Control, Zones and Schedule
+###############################################################################
+homeassistant:
+  customize:
+    input_boolean.disable_daily_vacuum:
+      icon: mdi:stop-circle-outline
+    input_boolean.disable_dustbin_notification:
+      icon: mdi:delete-empty
+    #binary_sensor.vacuum_room:
+    #  custom_ui_state_card: state-card-floorplan
+    #  config: !include ../floorplan_vacuum.yaml
+
+#binary_sensor:
+#  - platform: mqtt
+#    state_topic: dummy/floorplan/sensor
+#    name: Vacuum Room
+
+#frontend:
+#  extra_html_url:
+#    - /local/custom_ui/state-card-floorplan.html
+
+group:
+  Robot Vacuum:
+    control: hidden
+    entities:
+      - vacuum.xiaomi_vacuum_cleaner
+      - input_boolean.disable_daily_vacuum
+  Vacuum a Room:
+    name: 'Städa specifikt rum'
+    control: hidden
+    entities:
+      - input_select.vacuum_room
+      - binary_sensor.vacuum_room
+
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret xiaomi_vacuum_ip
+    token: !secret xiaomi_vacuum_token
+
+input_boolean:
+  daily_vacuum_first_run:
+    name: Daily Vacuum First Run
+    initial: off
+  disable_daily_vacuum:
+    name: Disable Daily Vacuum Automation
+    initial: on
+  disable_dustbin_notification:
+    name: Disable Dustbin Notification
+    initial: off
+
+input_select:
+  vacuum_room:
+    name: Vilket rum
+    options:
+      - Vilket rum
+#      - All Except Bedroom and Ensuite
+      - Bedroom
+      - Dining Room
+      - Christoffers rum
+      - Ensuite Bathroom
+      - Entryway
+      - Kitchen
+#      - Main Bathroom
+#      - Mopping Surfaces
+#      - Projector Room
+#      - Study
+    initial: Vilket rum
+
+script:
+  vacuum_all_except_bedroom_and_ensuite:
+        alias: "Vacuum All Except Bedroom and Ensuite"
+        sequence:
+          - service: vacuum.send_command
+            data:
+              entity_id: vacuum.xiaomi_vacuum_cleaner
+              command: app_zoned_clean
+              params: [[16034,19737,26234,29237,1],[19487,29248,26237,32198,1]]
+  vacuum_bedroom:
+        alias: "Vacuum Bedroom"
+        sequence:
+          - service: vacuum.send_command
+            data:
+              entity_id: vacuum.xiaomi_vacuum_cleaner
+              command: app_zoned_clean
+              params: [[17384,22689,21334,25889,1]]
+  vacuum_dining_room:
+        alias: "Vacuum Dining Room"
+        sequence:
+          - service: vacuum.send_command
+            data:
+              entity_id: vacuum.xiaomi_vacuum_cleaner
+              command: app_zoned_clean
+              params: [[17353,26330,20353,28830,1]]
+  vacuum_ensuite_bathroom:
+        alias: "Vacuum Ensuite Bathroom"
+        sequence:
+          - service: vacuum.send_command
+            data:
+              entity_id: vacuum.xiaomi_vacuum_cleaner
+              command: app_zoned_clean
+              params: [[12038,27467,16088,32017,1]]
+# Entryway not working correctly
+  vacuum_entryway:
+        alias: "Vacuum Entryway"
+        sequence:
+          - service: vacuum.send_command
+            data:
+              entity_id: vacuum.xiaomi_vacuum_cleaner
+              command: app_zoned_clean
+              params: [[21429,22481,23529,26431,1]]
+  vacuum_kitchen:
+        alias: "Vacuum Kitchen"
+        sequence:
+          - service: vacuum.send_command
+            data:
+              entity_id: vacuum.xiaomi_vacuum_cleaner
+              command: app_zoned_clean
+              params: [[20268,25417,22968,28317,1]]
+  vacuum_living_room:
+        alias: "Vacuum Living Room"
+        sequence:
+          - service: vacuum.send_command
+            data:
+              entity_id: vacuum.xiaomi_vacuum_cleaner
+              command: app_zoned_clean
+              params: [[23555,25115,29205,28815,1]]
+  vacuum_christoffer:
+        alias: "Vacuum Christoffers"
+        sequence:
+          - service: vacuum.send_command
+            data:
+              entity_id: vacuum.xiaomi_vacuum_cleaner
+              command: app_zoned_clean
+              params: [[23004,25042,26404,28442,1]]
+sensor:
+  - platform: template
+    sensors:
+      xiaomi_vacuum_cleaner_status:
+        entity_id:
+          - vacuum.xiaomi_vacuum_cleaner
+        friendly_name: "Xiaomi Vacuum Cleaner Status"
+        value_template: "{{ states.vacuum.xiaomi_vacuum_cleaner }}"
+
+###############################################################################
+#                               Automations
+###############################################################################
+automation:
+
+
+
+
+
+
+  - alias: Start Cleaning Room
+    hide_entity: True
+    trigger:
+    - platform: state
+      entity_id: input_select.vacuum_room
+      from: 'Select Input'
+    action:
+    - service: script.turn_on
+      data_template:
+        entity_id: >
+          {% if is_state("input_select.vacuum_room", "All Except Bedroom and Ensuite") %}
+            script.vacuum_all_except_bedroom_and_ensuite
+          {% elif is_state("input_select.vacuum_room", "Bedroom") %}
+            script.vacuum_bedroom
+          {% elif is_state("input_select.vacuum_room", "Dining Room") %}
+            script.vacuum_dining_room
+          {% elif is_state("input_select.vacuum_room", "Ensuite Bathroom") %}
+            script.vacuum_ensuite_bathroom
+          {% elif is_state("input_select.vacuum_room", "Entryway") %}
+            script.vacuum_entryway
+          {% elif is_state("input_select.vacuum_room", "Kitchen") %}
+            script.vacuum_kitchen
+          {% elif is_state("input_select.vacuum_room", "Living Room") %}
+            script.vacuum_living_room
+          {% elif is_state("input_select.vacuum_room", "Main Bathroom") %}
+            script.vacuum_main_bathroom
+          {% elif is_state("input_select.vacuum_room", "Mopping Surfaces") %}
+            script.vacuum_mopping_surfaces
+          {% elif is_state("input_select.vacuum_room", "Projector Room") %}
+            script.vacuum_projector_room
+          {% elif is_state("input_select.vacuum_room", "Study") %}
+            script.vacuum_study
+          {% else %}
+          {% endif %}
+    - service: input_select.select_option
+      entity_id: input_select.vacuum_room
+      data_template:
+        option: "Select Input"

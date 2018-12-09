@@ -194,7 +194,7 @@ influxdb:
   username: !secret influx_usr
   password: !secret influx_pass
 
-vacuum:
-  - platform: xiaomi_miio
-    host: !secret xiaomi_vacuum_ip
-    token: !secret xiaomi_vacuum_token
+#vacuum:
+#  - platform: xiaomi_miio
+#    host: !secret xiaomi_vacuum_ip
+#    token: !secret xiaomi_vacuum_token

@@ -101,8 +101,8 @@
     view: yes
     entities:
       - group.ups
-      - group.div
-      - vacuum.xiaomi_vacuum_cleaner
+      - group.robot_vacuum
+      - group.vacuum_a_room
       - sensor.yr_temperature
       - sensor.yr_symbol
       - sensor.yr_humidity
@@ -114,7 +114,7 @@
     name: Labbet
     #view: yes
     entities:
-    
+
       - binary_sensor.expriment_knapp
 
   Labbet:
