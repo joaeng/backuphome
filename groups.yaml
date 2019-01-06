@@ -117,10 +117,21 @@
 
       - binary_sensor.expriment_knapp
 
+  test:
+    name: odlingen
+    #view: yes
+    entities:
+      - switch.vattenpump
+      - switch.belysning
+      - switch.varme
+      - switch.ventilation
+
+      - binary_sensor.expriment_knapp
   Labbet:
     view: yes
     entities:
       - group.labbet
+      - group.odlingen
       - sun.sun
       - device_tracker.helenas_mobil
       - device_tracker.joakims_mobil
