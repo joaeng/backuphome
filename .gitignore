@@ -16,3 +16,4 @@ mysensors1.pickle
 plex.conf
 sparsnas_mqtt.yaml
 packages/README.md
+packages/.gitignore
