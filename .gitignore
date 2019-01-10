@@ -15,5 +15,9 @@ mysensors1.json
 mysensors1.pickle
 plex.conf
 sparsnas_mqtt.yaml
+home-assistant_v2.db-shm
+home-assistant_v2.db-wal
+
+##################
 packages/README.md
 packages/.gitignore

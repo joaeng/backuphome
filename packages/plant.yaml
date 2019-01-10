@@ -68,12 +68,26 @@ sensor:
 ################################################################################
 #                                                                  Automations #
 ################################################################################
-Automations:
-  # Tänder Belysningen 06.00
+
+automation:
   - alias: Sunrise(Plant)
     trigger:
      - platform: time
-       at: 06:00
+       at: '20:00:00'
     action:
        - service: switch.turn_on
          entity_id: switch.belysning
+       - service: notify.telegram_jocke
+         data:
+           message: 'Tänder belysningen'
+
+  - alias: Sunset(Plant)
+    trigger:
+     - platform: time
+       at: '20:05:00'
+    action:
+       - service: switch.turn_off
+         entity_id: switch.belysning
+       - service: notify.telegram_jocke
+         data:
+           message: 'Släcker Belysningen'
