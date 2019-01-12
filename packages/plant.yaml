@@ -164,13 +164,19 @@ automation:
 
   - alias: 'Temperatur-Fläkt'
     trigger:
-     - platform: time
-       seconds: 30
+      - platform: numeric_state
+        entity_id: sensor.temp1
+        below: 21
+      - platform: numeric_state
+        entity_id: sensor.temp1
+        above: 23
+
     action:
-      - service_template: ->
-           {% if states ('states.sensor.temp1.state') | int > 23 %}
-           switch.turn_on
-           {% else %}
-           switch.turn_off
-           {% endif %}
+      service_template: ->
+       {% if trigger.above %}
+       switch.turn_on
+       {% else %}
+       switch.turn_off
+       {% endif %}
+      data:
         entity_id: switch.ventilation
