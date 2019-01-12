@@ -1,3 +1,23 @@
+################################################################################
+# Plant package                                                                #
+#                                                                              #
+# Source: https://                                                             #
+#                                                                              #
+################################################################################
+
+
+################################################################################
+#                                                                          Div #
+################################################################################
+
+
+
+
+################################################################################
+#                                                                        Group #
+################################################################################
+
+
 group:
   odlingen:
     name: odlingen
@@ -9,6 +29,18 @@ group:
     - switch.ventilation
     #- binary_sensor.expriment_knapp
     - plant.tomater
+    - sensor.temp1
+    - sensor.temp2
+    - group.automatik
+  automatik:
+    name: Automatik
+    view: no
+    entities:
+      - automation.bevattning
+      - automation.vaxtbelysning_pa
+      - automation.vaxtbelysning_av
+
+
 plant:
   tomater:
     sensors:
@@ -84,7 +116,7 @@ sensor:
 ################################################################################
 
 automation:
-  - alias: Sunrise(Plant)
+  - alias: 'Växtbelysning på'
     trigger:
      - platform: time
        at: '20:00:00'
@@ -95,7 +127,7 @@ automation:
          data:
            message: 'Tänder belysningen'
 
-  - alias: Sunset(Plant)
+  - alias: 'Växtbelysning av'
     trigger:
      - platform: time
        at: '20:05:00'
@@ -105,3 +137,40 @@ automation:
        - service: notify.telegram_jocke
          data:
            message: 'Släcker Belysningen'
+
+  - alias: Bevattning
+    trigger:
+      platform: time
+      at: '11:00:00'
+    condition:
+      condition: time
+      weekday:
+        - mon
+        - wed
+        - fri
+
+    action:
+       - service: switch.turn_on
+         entity_id: switch.vattenpump
+       - service: notify.telegram_jocke
+         data:
+           message: 'Dagens Bevattning på börjad'
+       - delay: 00:05:00
+       - service: switch.turn_off
+         entity_id: switch.vattenpump
+       - service: notify.telegram_jocke
+         data:
+           message: 'Dagens Bevattning avslutad'
+
+  - alias: 'Temperatur-Fläkt'
+    trigger:
+     - platform: time
+       seconds: 30
+    action:
+      - service_template: ->
+           {% if states ('states.sensor.temp1.state') | int > 23 %}
+           switch.turn_on
+           {% else %}
+           switch.turn_off
+           {% endif %}
+        entity_id: switch.ventilation
