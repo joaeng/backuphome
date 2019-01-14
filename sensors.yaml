@@ -1,8 +1,13 @@
   - platform: krisinformation
     name: Krisinformation Stockholm
     latitude: !secret lat_coord
-
     longitude: !secret long_coord
+    radius: 100
+
+  - platform: krisinformation
+    name: Krisinformation Uppsala
+    latitude: !secret lat_coord_landet
+    longitude: !secret long_coord_landet
     radius: 100
 
   - platform: mqtt

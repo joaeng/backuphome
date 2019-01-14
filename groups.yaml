@@ -21,6 +21,7 @@
     name: Krisinformation
     entities:
       - sensor.krisinformation_stockholm
+      - sensor.krisinformation_uppsala
 
 
 ############################# 3d-printer
