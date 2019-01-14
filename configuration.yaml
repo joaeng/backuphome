@@ -127,11 +127,11 @@ switch:
 #      friendly_name: espeasy
 
 
-mysensors:
-  gateways:
-    device: '192.168.0.218'
-    persistence_file: '/home/homeassistant/.homeassistant/mysensors1.json'
-    tcp_port: 5003
+#mysensors:
+#  gateways:
+#    device: '192.168.0.218'
+#    persistence_file: '/home/homeassistant/.homeassistant/mysensors1.json'
+#    tcp_port: 5003
 logger:
   default: error
   logs:

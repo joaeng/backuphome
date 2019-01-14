@@ -10,10 +10,17 @@
       - sun.sun
       - device_tracker.helenas_mobil
       - device_tracker.joakims_mobil
+      - sensor.krisinformation_stockholm
+      - group.kris
   vader:
     name: väder
     entities:
       - weather.smhi_home
+
+  kris:
+    name: Krisinformation
+    entities:
+      - sensor.krisinformation_stockholm
 
 
 ############################# 3d-printer
