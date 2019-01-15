@@ -10,6 +10,8 @@
     longitude: !secret long_coord_landet
     radius: 100
 
+  - platform: version
+
   - platform: mqtt
     name: Printer-progress
     state_topic: "octoprint/progress/#"

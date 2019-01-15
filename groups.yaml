@@ -12,6 +12,7 @@
       - device_tracker.joakims_mobil
       - sensor.krisinformation_stockholm
       - group.kris
+      - sensor.current_version
   vader:
     name: väder
     entities:
