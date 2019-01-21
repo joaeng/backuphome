@@ -137,10 +137,18 @@
     platform: state
     to: 'off'
 - id: '1537902808015'
-  alias: ''
-  trigger: []
-  condition: []
-  action: []
+  alias: testning away
+  trigger:
+  - at: '19:38'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: sensor.housemode
+    state: away
+  action:
+  - data:
+      message: testar
+    service: notify.telegram_jocke
 - action:
   - data:
       message: 'Ny uppdatering till hass hemma '

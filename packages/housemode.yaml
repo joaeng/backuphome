@@ -53,3 +53,30 @@ sensor:
 ################################################################################
 
 automation:
+
+  alias: testning away
+  trigger:
+    - at: '19:45'
+      platform: time
+  condition:
+    - condition: state
+      entity_id: sensor.housemode
+      state: away
+  action:
+    - data:
+        message: testar away
+      service: notify.telegram_jocke
+
+
+  alias: testning home
+  trigger:
+    - at: '19:50'
+      platform: time
+  condition:
+    - condition: state
+      entity_id: sensor.housemode
+      state: home
+  action:
+    - data:
+        message: testar home
+      service: notify.telegram_jocke
