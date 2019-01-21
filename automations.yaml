@@ -165,7 +165,7 @@
 - id: '1541970471813'
   alias: 3d pwr off 100%
   trigger:
-  - entity_id: sensor.printerprogress
+  - entity_id: sensor.printer_progress
     from: '99'
     platform: state
     to: '100'
@@ -179,7 +179,7 @@
       entity_id: switch.skrivaren_326
     service: switch.turn_off
   - data:
-      entity_id: switch.printerlight
+      entity_id: switch.printer_light
     service: switch.turn_off
 - action:
   - data:

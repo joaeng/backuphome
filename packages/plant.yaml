@@ -30,10 +30,10 @@ group:
     - switch.ventilation
     #- binary_sensor.expriment_knapp
     - plant.tomater
-    - sensor.temp1
-    - sensor.temp2
+    - sensor.temp_1
+    - sensor.temp_2
     - group.automatik
-    
+
   automatik:
     name: Automatik
     view: no
@@ -41,8 +41,8 @@ group:
       - automation.bevattning
       - automation.vaxtbelysning_pa
       - automation.vaxtbelysning_av
-      - automation.temperaturflakt
-      - automation.temperaturvarme
+      - automation.temperatur_flakt
+      - automation.temperatur_varme
 
 
 plant:
@@ -50,7 +50,7 @@ plant:
     sensors:
       moisture: sensor.vatten_larm
       brightness: sensor.tomatsol
-      temperature: sensor.temp1
+      temperature: sensor.temp_1
       battery: sensor.plantwatt
 ################################################################################
 #                                                                       switch #
@@ -177,10 +177,10 @@ automation:
   - alias: 'Temperatur-Fläkt'
     trigger:
       - platform: numeric_state
-        entity_id: sensor.temp1
+        entity_id: sensor.temp_1
         below: 21
       - platform: numeric_state
-        entity_id: sensor.temp1
+        entity_id: sensor.temp_1
         above: 23
         for:
           seconds: 30
@@ -195,7 +195,7 @@ automation:
   - alias: 'Temperatur-Värme'
     trigger:
       - platform: numeric_state
-        entity_id: sensor.temp1
+        entity_id: sensor.temp_1
         below: 18
       - platform: numeric_state
         entity_id: sensor.temp1

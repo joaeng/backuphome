@@ -39,12 +39,12 @@
     name: 3D-Printer
     #view: yes
     entities:
-      - sensor.printerobject
-      - sensor.printerprogress
-      - sensor.printertemperature
+      - sensor.printer_object
+      - sensor.printer_progress
+      - sensor.printer_temperature
       - switch.skrivaren_326
       - switch.octoprint_325
-      - switch.printerlight
+      - switch.printer_light
       - automation.3d_pwr_off_100
   3d-printer:
     view: yes
@@ -125,6 +125,8 @@
     entities:
 
       - binary_sensor.expriment_knapp
+      - sensor.temp_kok_9_0
+      - sensor.temp_kok_9_1
 
   test:
     name: odlingen
