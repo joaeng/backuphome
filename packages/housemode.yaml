@@ -26,6 +26,10 @@ group:
     entities:
     - sensor.housemode
     - input_boolean.status
+    - automation.3d_pwr_off_100
+    - automation.bevattning
+    - script.home
+    - script.away
 
 ################################################################################
 #                                                                       switch #
@@ -54,29 +58,54 @@ sensor:
 
 automation:
 
-  alias: testning away
-  trigger:
-    - at: '19:45'
-      platform: time
-  condition:
-    - condition: state
-      entity_id: sensor.housemode
-      state: away
-  action:
-    - data:
-        message: testar away
-      service: notify.telegram_jocke
+  - alias: away
+    trigger:
+      - entity_id: sensor.housemode
+        from: home
+        platform: state
+        to: away
+
+    action:
+      service: script.turn_on
+      entity_id: script.away
+
+  - alias: home
+    trigger:
+      - entity_id: sensor.housemode
+        from: away
+        platform: state
+        to: home
+
+    action:
+      service: script.turn_on
+      entity_id: script.home
 
 
-  alias: testning home
-  trigger:
-    - at: '19:50'
-      platform: time
-  condition:
-    - condition: state
-      entity_id: sensor.housemode
-      state: home
-  action:
-    - data:
-        message: testar home
-      service: notify.telegram_jocke
+
+
+
+
+
+
+
+################################################################################
+#                                                                       script #
+################################################################################
+
+script:
+  away:
+    alias: away
+    sequence:
+      - alias : Start Away-mode
+        service: homeassistant.turn_off
+        entity_id:
+          - automation.3d_pwr_off_100
+          - automation.bevattning
+  home:
+    alias: home
+    sequence:
+      - alias: Start Home-mode
+        service: homeassistant.turn_on
+        entity_id:
+          - automation.3d_pwr_off_100
+          - automation.bevattning
