@@ -6,23 +6,22 @@
       - group.sparsnas
       - group.vader
     # - group.Basement
-      - weather.smhi_home
+      - weather.smhi_hemma
       - sun.sun
+      - sensor.yr_temperature
+      - sensor.yr_symbol
+      - sensor.yr_humidity
       - device_tracker.helenas_mobil
       - device_tracker.joakims_mobil
-      - sensor.krisinformation_stockholm
-      - group.kris
       - sensor.current_version
+      - sensor.medeltemp_ute
   vader:
     name: väder
     entities:
-      - weather.smhi_home
+      - weather.smhi_hemma
+      - weather.smhi_landet
 
-  kris:
-    name: Krisinformation
-    entities:
-      - sensor.krisinformation_stockholm
-      - sensor.krisinformation_uppsala
+
 
 
 ############################# 3d-printer
@@ -51,8 +50,13 @@
     entities:
       - group.3dprinter
       - sun.sun
+      - sensor.yr_temperature
+      - sensor.yr_symbol
+      - sensor.yr_humidity
       - device_tracker.helenas_mobil
       - device_tracker.joakims_mobil
+      - sensor.current_version
+      - sensor.medeltemp_ute
 ############################ Lägenhet
   sovrum:
     name: Sovrum
@@ -87,6 +91,8 @@
       - sensor.yr_humidity
       - device_tracker.helenas_mobil
       - device_tracker.joakims_mobil
+      - sensor.current_version
+      - sensor.medeltemp_ute
 ############################ Teknik
 
   ups:
@@ -112,11 +118,14 @@
       - group.ups
       - group.robot_vacuum
       - group.vacuum_a_room
+      - sun.sun
       - sensor.yr_temperature
       - sensor.yr_symbol
       - sensor.yr_humidity
       - device_tracker.helenas_mobil
       - device_tracker.joakims_mobil
+      - sensor.current_version
+      - sensor.medeltemp_ute
 ###################################################
 ############################# Labbet
   labbet:
@@ -144,8 +153,13 @@
       - group.labbet
       - group.odlingen
       - sun.sun
+      - sensor.yr_temperature
+      - sensor.yr_symbol
+      - sensor.yr_humidity
       - device_tracker.helenas_mobil
       - device_tracker.joakims_mobil
+      - sensor.current_version
+      - sensor.medeltemp_ute
 
 ############################# /Labbet
   mysensors:

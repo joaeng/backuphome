@@ -123,8 +123,9 @@ sensor:
     entity_ids:
       - sensor.temp_1
       - sensor.temp_2
-    type: mean  
+    type: mean
     name: Medeltemp
+ 
 
 
 
