@@ -18,7 +18,7 @@
 group:
   leave:
     name: leave
-    view: yes
+    view: no
     entities:
       - device_tracker.helenas_mobil
       - device_tracker.joakims_mobil
@@ -67,11 +67,12 @@ automation:
         minutes: 10
     condition:
     - condition: state
-      entity_id: device_tracker.joakim_mobil
+      entity_id: device_tracker.joakims_mobil
       state: not_home
     - condition: state
       entity_id: binary_sensor.verisure_113
-      state: off
+      state: 'off'
+
     action:
     - data:
         message: Du gick sist .. Men larmade du?
