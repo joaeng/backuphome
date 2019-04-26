@@ -3,9 +3,8 @@
     icon: mdi:home
     entities:
       - group.kitchen
-      - group.sparsnas
+      
       - group.vader
-    # - group.Basement
       - weather.smhi_hemma
       - sun.sun
       - sensor.yr_temperature
@@ -20,6 +19,10 @@
     entities:
       - weather.smhi_hemma
       - weather.smhi_landet
+  larm:
+    name: Larm
+    entities:
+      - binary_sensor.verisure_113
 
 
 
@@ -185,14 +188,3 @@
       - binary_sensor.carpresence
       - sensor.carpresencesignal
       - sensor.carpresenceuptime
-  sparsnas:
-    name: Energy Consumption
-    view: no
-    icon: mdi:flash-circle
-    entities:
-      - sensor.sparsnas_energy_consumption_momentary
-      - sensor.sparsnas_energy_consumption_over_time
-      - sensor.sparsnas_battery_remaining
-      - sensor.sparsnas_frequency_error
-      - sensor.kwh_today
-      - sensor.kwh_current_month

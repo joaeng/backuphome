@@ -2,33 +2,28 @@
 # House.Mode.Package                                                           #
 # Made By: Joakim Engberg                                                      #
 # Source:                                                                      #
-# https://github.com/joaeng/backuphome/blob/master/packages/housemode.yaml     #
+# https://github.com/joaeng/backuphome/blob/master/packages/leave.yaml     #
 ################################################################################
 
 ################################################################################
 #                                                                configuration #
 ################################################################################
 
-input_boolean:
-  status:
-    name: Närvaro
-    initial: off
+
 
 ################################################################################
 #                                                                        Group #
 ################################################################################
 
 group:
-  status:
-    name: Närvaro
+  leave:
+    name: leave
     view: yes
     entities:
-    - sensor.housemode
-    - input_boolean.status
-    - automation.3d_pwr_off_100
-    - automation.bevattning
-    - script.home
-    - script.away
+      - device_tracker.helenas_mobil
+      - device_tracker.joakims_mobil
+      - automation.helena_lamnar
+      - automation.jocke_lamnar
 
 ################################################################################
 #                                                                       switch #
@@ -41,59 +36,51 @@ group:
 ################################################################################
 
 sensor:
-  - platform: template
-    sensors:
-      housemode:
-          value_template: >-
-            {% if is_state("input_boolean.status","off") %}
-              away
-            {% else %}
-              home
-            {% endif %}
 
 ################################################################################
 #                                                                  Automations #
 ################################################################################
 
 automation:
-  - alias: away
+  - alias: jocke_lämnar
     trigger:
-      - entity_id: sensor.housemode
-        from: home
-        platform: state
-        to: away
+    - entity_id: device_tracker.joakims_mobil
+      from: home
+      platform: state
+      to: not_home
+    condition:
+    - condition: state
+      entity_id: device_tracker.helenas_mobil
+      state: not_home
     action:
-      service: script.turn_on
-      entity_id: script.away
+    - data:
+        message: Du gick sist .. Men larmade du?
+      service: notify.telegram_jocke
 
-  - alias: home
+  - alias: helena_lämnar
     trigger:
-      - entity_id: sensor.housemode
-        from: away
-        platform: state
-        to: home
+    - entity_id: device_tracker.helenas_mobil
+      from: home
+      platform: state
+      to: not_home
+      for:
+        minutes: 10
+    condition:
+    - condition: state
+      entity_id: device_tracker.joakim_mobil
+      state: not_home
+    - condition: state
+      entity_id: binary_sensor.verisure_113
+      state: off
     action:
-      service: script.turn_on
-      entity_id: script.home
+    - data:
+        message: Du gick sist .. Men larmade du?
+      service: notify.telegram_helena
+
+
 
 ################################################################################
 #                                                                       script #
 ################################################################################
 
 script:
-  away:
-    alias: away
-    sequence:
-      - alias : Start Away-mode
-        service: homeassistant.turn_off
-        entity_id:
-          - automation.3d_pwr_off_100
-          - automation.bevattning
-  home:
-    alias: home
-    sequence:
-      - alias: Start Home-mode
-        service: homeassistant.turn_on
-        entity_id:
-          - automation.3d_pwr_off_100
-          - automation.bevattning
