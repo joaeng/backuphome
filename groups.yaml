@@ -3,7 +3,7 @@
     icon: mdi:home
     entities:
       - group.kitchen
-      
+
       - group.vader
       - weather.smhi_hemma
       - sun.sun
@@ -21,6 +21,7 @@
       - weather.smhi_landet
   larm:
     name: Larm
+    view: no
     entities:
       - binary_sensor.verisure_113
 
