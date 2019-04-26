@@ -135,3 +135,5 @@ binary_sensor.expriment_knapp:
     rgb_color: if (state > off) return [251, 210, 41]; else return [54, 95, 140];
 media_player.ue46es6805_ue46es6805:
   friendly_name: Tv
+sensor.sparsnas_energy_consumption_momentary:
+  icon: mdi:flash-circle

@@ -1,0 +1,10 @@
+type: entities
+title: Entities card sample
+show_header_toggle: true
+entities:
+  - entity: alarm_control_panel.alarm
+    name: Alarm Panel
+  - device_tracker.demo_paulus
+  - switch.decorative_lights
+  - group.all_lights
+  - group.all_locks

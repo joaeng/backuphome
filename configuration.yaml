@@ -171,11 +171,11 @@ mqtt:
   discovery_prefix: homeassistant
 
 binary_sensor:
-  - platform: mqtt
-    state_topic: "/sonoff/Monitor_Basement/knapp/Switch"
-    name: expriment knapp
-    payload_off: '1'
-    payload_on: '0'
+#  - platform: mqtt
+#    state_topic: "/sonoff/Monitor_Basement/knapp/Switch"
+#    name: expriment knapp
+#    payload_off: '1'
+#    payload_on: '0'
   - platform: workday
     name: workday_imorgon
     country: SE
@@ -193,7 +193,7 @@ influxdb:
   database: !secret influx_db
   username: !secret influx_usr
   password: !secret influx_pass
-
+system_health:
 #vacuum:
 #  - platform: xiaomi_miio
 #    host: !secret xiaomi_vacuum_ip

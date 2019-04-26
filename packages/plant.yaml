@@ -29,7 +29,7 @@ group:
     - switch.varme
     - switch.ventilation
     #- binary_sensor.expriment_knapp
-    - plant.tomater
+    - plant.odlingen
     - sensor.temp_1
     - sensor.temp_2
     - group.automatik
@@ -46,7 +46,7 @@ group:
 
 
 plant:
-  tomater:
+  odlingen:
     sensors:
       moisture: sensor.vatten_larm
       brightness: sensor.tomatsol
@@ -102,12 +102,12 @@ sensor:
   - platform: mqtt
     name: 'Temp-1'
     state_topic: "/Monitor_Basement/T1/T"
-    retain: true
+    #retain: true
 
   - platform: mqtt
     name: 'Temp-2'
     state_topic: '/Monitor_Basement/T2/T'
-    retain: true
+    #retain: true
 
   - platform: template
     sensors:
@@ -119,6 +119,12 @@ sensor:
             {% else %}
               0
             {% endif %}
+  - platform: min_max
+    entity_ids:
+      - sensor.temp_1
+      - sensor.temp_2
+    type: mean  
+    name: Medeltemp
 
 
 
@@ -131,7 +137,7 @@ automation:
   - alias: 'Växtbelysning på'
     trigger:
      - platform: time
-       at: '20:00:00'
+       at: '07:00:00'
     action:
        - service: switch.turn_on
          entity_id: switch.belysning
@@ -183,7 +189,7 @@ automation:
         entity_id: sensor.temp_1
         above: 23
         for:
-          seconds: 30
+          seconds: 60
 
     action:
       service_template: '{% if trigger.above %} switch.turn_on {% else %} switch.turn_off {% endif %}'
@@ -201,7 +207,7 @@ automation:
         entity_id: sensor.temp1
         above: 20
         for:
-          seconds: 30
+          seconds: 60
 
     action:
       service_template: '{% if trigger.below %} switch.turn_on {% else %} switch.turn_off {% endif %}'
